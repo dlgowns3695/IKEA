@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKEA KOREA</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- <link rel="stylesheet" href="css/IKEAfornt.css"> -->
+    <link rel="stylesheet" href="css/IKEAfornt.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.11/lottie.min.js"></script>
+    <style>
+
+    </style>
+    
+    
+</head>
+<body>
+    <div>
+        <div class="ikeaLogo">
+            <img src="imgs/logo.jpg" alt="">
+        </div>
+
+        <!-- 전체 감싸주는 div -->
+        <div class="wrapper">
+            <!-- 텍스트 -->
+            <div class="titles container">
+                <div class="titlesTop">
+                    <div class="mainTitleFadeIn">
+                        <p class="youdo">YOU DO HALF, WE DO HALF</p>
+                        <p class="yourhome">MAKE CHEAPER OF YOUR HOME</p>
+                    </div>
+            
+                    <div class="subTitleFadeIn" >
+                        <p class="subPtag">the wonderful everyday visit us online or in-store</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centerContainer">
+                <div class="mainContainer c-author js-liquify-trigger">
+
+                    <!-- Left 건물 -->
+                    <div class="leftBuilding js-ink-trigger c-transition c-transition--large c-transition--center"></div>
+
+                    <!-- hover 아이콘 모아놓은 div -->
+                    <div class="backgroundBuilding">
+                        <div>
+                            <!-- livingRoom 위치를 위한 큰 틀 -->
+                            <div class="livingRoomBox">
+                                <div class="mainCircle">
+                                    <div class="borderCircle"></div>
+                                    <div class="centerCircle"></div>
+                                    <div class="circle clickpointer livingcircle"></div>
+                                </div>
+                                <img class="livingHover" src="imgs/LIVINGROOMhover.png" alt="LIVINGROOM">
+                                <!-- livingRoom 타이틀 -->
+                                <p class="preten">LIVING ROOM</p>
+                            </div>
+                            <!-- bedRoomBox 위치를 위한 큰 틀 -->
+                            <div class="bedRoomBox">
+                                <!-- mainCircle 의 원 -->
+                                <div class="mainCircle">
+                                    <div class="borderCircle"></div>
+                                    <div class="centerCircle"></div>
+                                    <div class="circle clickpointer bedcircle"></div>
+                                </div>
+                                <img class="bedHover" src="imgs/BEDROOMhover.png" alt="BEDROOM">
+                                <!-- BED ROOM 타이틀 -->
+                                <p class="preten">BED ROOM</p>
+                            </div>
+                            
+                            <div class="kitchenBox">
+                                <div class="mainCircle">
+                                    <div class="borderCircle"></div>
+                                    <div class="centerCircle"></div>
+                                    <div class="circle clickpointer kitchencircle"></div>
+                                </div>
+                                <img class="kitchenHover" src="imgs/KITCHENhover.png" alt="KITCHEN">
+                                <p class="preten">KITCHEN</p>
+                            </div>
+    
+                            <div class="bathRoomBox">
+                                <div class="mainCircle">
+                                    <div class="borderCircle"></div>
+                                    <div class="centerCircle"></div>
+                                    <div class="circle clickpointer bathcircle"></div>
+                                </div>
+                                <img class="bathHover" src="imgs/BATHROOMhover.png" alt="BATHROOM">
+                                <p class="preten">BATH ROOM</p>
+                            </div>
+
+                            <!-- 가로등, 사람 -->
+                            <div>
+                                <div class="leftHuman">
+                                    <img src="imgs/lefthuman.png" alt="">
+                                </div>
+
+                                <div class="centerHuman">
+                                    <img src="imgs/centerhuman.png" alt="">
+                                </div>
+
+                                <div class="rightHuman">
+                                    <img src="imgs/righthuman.png" alt="">
+                                </div>
+
+                                <div class="streets">
+                                    <div class="leftStreetLight"></div>
+                                    <div class="leftCenterStreetLight"></div>
+                                    <div class="rightCenterStreetLight"></div>
+                                    <div class="rightStreetLight"></div>
+                                </div>
+                            </div>
+
+                            <div class="bottomProps"></div>
+                        </div>
+
+                         <!-- 영상이나 사진 모아놓은 div -->
+                        <div>
+                            <!-- 영상 -->
+                            <div class="video-container">
+                                <video autoplay loop muted src="imgs/IKEAvideo.mp4"></video>
+                            </div>    
+                            <!-- 슬라이드 배너 -->
+                            <div class="slide-container">
+                                <div class="slides">
+                                    <div class="slide" id="slide1">
+                                        <img src="imgs/banner01.jpg" alt="IKEA Poster 01">
+                                    </div>
+                                    <div class="slide" id="slide2">
+                                        <img src="imgs/banner02.jpg" alt="IKEA Poster 02">
+                                    </div>
+                                    <div class="slide" id="slide3">
+                                        <img src="imgs/banner03.jpg" alt="IKEA Poster 03">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Right 건물 -->
+                    <div class="rightBuilding js-ink-trigger c-transition c-transition--large c-transition--center">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/IKEA.js"></script>
+    
+
+</body>
+</html>

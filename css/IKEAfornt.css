@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+body{font-family: "Marcellus", serif;font-weight: 400;font-style: normal;}
+
+.wrapper{display:flex;flex-flow:column;height: 100dvh;justify-content: space-between;}
+
+.centerContainer{display:flex;justify-content: center; overflow: hidden;}
+
+.ikeaLogo{position: absolute; right:26px; top: 26px;}
+
+.titles {text-align: center;}
+.titles .titlesTop{display:flex;flex-flow:column;align-items: center; margin-top: 50px;}
+.titles .titlesTop .mainTitleFadeIn .youdo {opacity: 0; margin-left: -310px;transition: opacity 1s, margin-left 1s; }
+   
+.titles .titlesTop .mainTitleFadeIn .yourhome {
+opacity: 0; 
+margin-left: 360px; 
+margin-top: 14px;
+transition: opacity 1s, margin-left 1s; 
+}
+.titles .mainTitleFadeIn {font-size: 30px;letter-spacing: 0.04rem;}
+
+.titles .titlesTop .subTitleFadeIn {
+    position: relative;
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+   
+}
+
+.titles .titlesTop .subTitleFadeIn .subPtag{
+    opacity: 0;
+    transition: opacity 1s, top 0.5s;
+    position: absolute; top: 60px;
+}
+.centerContainer .mainContainer {
+    width:100dvw;
+    height:80dvh;
+    position: relative;
+}
+
+.leftBuilding{
+    background: url('/imgs/leftstrokeBg.png') no-repeat;
+    width: 792px;
+    height: 530px;
+    position:absolute;
+    left: -215px;
+    bottom: 68px;
+    }
+      
+.rightBuilding{
+    background: url('/imgs/rightstrokeBg2.png')no-repeat;
+    width: 792px;
+    height: 530px;
+    position:absolute;
+    right: -90px;
+    bottom: 53px;
+}
+.backgroundBuilding{
+    width: 1039px;
+    height: 546px;
+    background: url('/imgs/IKEACENTERbuilding.png') no-repeat;
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:127px;
+    z-index:9;
+
+    opacity: 0;
+    transition: opacity 1s
+}
+
+
+.c-transition::before {
+    background-image: url("/imgs/ink-photo-frame.png");
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+.c-transition::after {
+    background-image: url('/imgs/ink-transition-sprite.png');
+    background-size: 100% 100%;
+    content: "";
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-1.25%);
+    width: 4000%;
+}
+/* 애니메이션 시간 조절하는 부분 */
+.c-transition.is-active::after {
+    -webkit-animation: ink-transition 2s steps(39) 0.7s forwards;
+            animation: ink-transition 2s steps(39) 0.7s forwards;
+}
+.c-transition__img {
+    height: 100%;
+    -o-object-fit: cover;
+        object-fit: cover;
+    opacity: 0;
+    width: 100%;
+}
+
+.is-active .c-transition__img {
+    opacity: 1;
+}
+.c-transition--img-top .c-transition__img {
+    -o-object-position: 50% 0;
+        object-position: 50% 0;
+}
+/**
+    * Keyframes
+    */
+@-webkit-keyframes ink-transition {
+    0% {
+        transform: translateX(-1.25%);
+    }
+    99% {
+        transform: translateX(-98.75%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-98.75%);
+        opacity: 0;
+    }
+}
+@keyframes ink-transition {
+    0% {
+        transform: translateX(-1.25%);
+    }
+    99% {
+        transform: translateX(-98.75%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-98.75%);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+.preten{
+    position: absolute;
+    z-index: 11;
+    color: #fff;
+    font-family: "Pretendard-Regular", serif;
+    font-size: 12px;
+    letter-spacing: -0.005rem;
+}
+.mainCircle{width: 36px; height: 36px; position: absolute;z-index: 99;cursor: pointer; }
+.centerCircle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px; height: 10px; background-color: #fff;border-radius: 50%;
+    z-index:200;
+}
+.borderCircle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    width: 36px; height: 36px; background-color: rgba(0,0,0,0.3);border-radius: 50%; border: 1px solid #fff;
+    z-index:200;
+}
+  
+.livingRoomBox {
+    position: absolute;
+    top: 235px;
+    left: 202px;
+    width: 176px;
+    height: 35px;
+
+    opacity: 0;
+    transition: opacity 1s
+}
+.livingRoomBox .mainCircle{top: -16px;left: 110px;}
+.livingRoomBox  .preten{top: -36px; left: 88px;}
+  
+.bedRoomBox {
+    position: absolute;
+    top: 219px;
+    left: 471px;
+    width: 227px;
+    height: 36px;
+
+    opacity: 0;
+    transition: opacity 1s
+}
+.bedRoomBox .mainCircle{top:0;right: 53px;}
+.bedRoomBox  .preten{top: -24px; right:40px;}
+  
+.kitchenBox {
+    position: absolute;
+    top: 297px;
+    left: 553px;
+    width: 143px;
+    height: 36px;
+
+    opacity: 0;
+    transition: opacity 1s
+}
+.kitchenBox .mainCircle{top: 18px;left: 43px;}
+.kitchenBox  .preten{top:62px; right: 58px}
+  
+.bathRoomBox {
+    position: absolute;
+    top: 300px;
+    left: 860px;
+    width: 130px;
+    height: 35px;
+
+    opacity: 0;
+    transition: opacity 1s
+}
+.bathRoomBox .mainCircle{top: 16px; left: 66px;}
+.bathRoomBox  .preten{top: 60px; left: 52px;}
+  
+  
+  .livingHover {
+    top: -2px;
+    position: absolute;
+    left: 4px;
+    opacity: 0;
+    z-index: 11;
+    transition: opacity 0.3s ease;
+}
+  .bedHover {
+    top: 6px;
+    position: absolute;
+    left: -9px;
+    opacity: 0;
+    z-index: 11;
+    transition: opacity 0.3s ease;
+}
+.kitchenHover {
+    top: -4px;
+    position: absolute;
+    left: -9px;
+    opacity: 0;
+    z-index: 11;
+    transition: opacity 0.3s ease;
+}
+.bathHover {
+    top: -2px;
+    position: absolute;
+    left: 0px;
+    opacity: 0;
+    z-index: 11;
+    transition: opacity 0.3s ease;
+}
+
+  
+@keyframes pulse {
+    0%{
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 0;
+    }
+}
+
+.circle {
+    /* t0,l0  w100%,h100%  하면 크기 딱 맞게 가능*/
+    position: absolute;
+    top: -7px;
+    left:-7px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    z-index: 3;
+  }
+
+.show {opacity: 1;}
+
+.slide-container {
+    position: absolute;
+    right: 33px;
+    bottom: 254px;
+    width: 250px;
+    z-index: 11;
+    overflow: hidden;
+}
+.slides {display: flex;transition: transform 0.5s ease;}
+
+  
+.video-container {
+    width: 144px;
+    height: 81px;
+    position: absolute;
+    z-index: 11;
+    bottom: 174px;
+    left: 204px;
+}
+.video-container video{width: 100%; height: 100%;}
+  
+/* left빌딩 기준 */
+.leftHuman{opacity: 0; transition: opacity 1.2s; position: absolute; bottom: 0; left: -108px;}
+/* .leftHuman{position: absolute; bottom: -6px;left: -114px;} bg빌딩 기준 */
+.centerHuman{opacity: 0; transition: opacity 1.2s; position: absolute; bottom: -67px;left: 167px; z-index: 111;}
+.rightHuman{opacity: 0; transition: opacity 1.2s; position: absolute; bottom: -48px;left: 829px; z-index: 111;}
+
+.leftStreetLight{opacity: 0; transition: opacity 1s; width: 35px; height: 226px; position: absolute; bottom: -92px;left: -357px; background: url('/imgs/leftstreetlight.png') no-repeat;}
+.leftCenterStreetLight{opacity: 0; transition: opacity 1s; width: 38px; height: 198px; position: absolute; bottom: -25px;left: 106px;background: url('/imgs/leftcenterstreetlight.png') no-repeat;}
+.rightCenterStreetLight{opacity: 0; transition: opacity 1s; width: 38px; height: 198px; position: absolute; bottom: -26px;right: -44px; background: url('/imgs/rightcenterstreetlight.png') no-repeat;}
+.rightStreetLight{opacity: 0; transition: opacity 1s; width: 37px; height: 244px; position: absolute; bottom: -114px;right: -143px; background: url('/imgs/rightstreetlight.png') no-repeat;}
+
+.bottomProps {
+  opacity: 0; transition: opacity 1s;
+  position: absolute;
+  left: -535px;
+  bottom: -115px;
+  width: 2027px;
+  height: 187px;
+  background: url(/imgs/bottomProps.png) no-repeat;
+}
+
+
+@media screen and ( max-height: 840px )
+{
+   .titles{display: none;}
+   .centerContainer{margin-top: 50px;}
+   .centerContainer .mainContainer{height: 100dvh;}
+   
+}

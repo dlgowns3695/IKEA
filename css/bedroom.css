@@ -1,0 +1,863 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.backgroundContainer{position: relative; width: 100dvw; height: 100dvh; min-width: 1800px; min-height: 900px; background: url('/imgs/bedroom/BEDROOMbg.png');}
+
+.mainCircle{width: 36px; height: 36px; position: absolute;z-index: 4;cursor: pointer; opacity: 0;}
+.centerCircle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px; height: 10px; background-color: #fff;border-radius: 50%;
+    z-index:4;
+}
+.borderCircle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    width: 36px; height: 36px; background-color: rgba(0,0,0,0.3);border-radius: 50%; border: 1px solid #fff;
+    z-index:4;
+}
+/* 웅웅 거리는 파동 원 */
+.circle {
+    position: absolute;
+    top: -7px;
+    left:-7px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    z-index: 3;
+}
+
+/* .show {opacity: 1;} */
+.hart img {
+  display: none;
+}
+
+.hart img.show {
+  display: block;
+}
+
+
+.rug{position: absolute; bottom: 0; left:550px;}
+.rug img{max-width: 80%;}
+
+.bedBox{position: absolute; bottom: 0; left: 186px; opacity: 0;}
+.bedBox .bed{opacity: 1;}
+.bedBox .mainCircle{bottom: 186px; left: 682px;}
+
+/* 각 베개 하나씩 나오게 조정하기 */
+.pillowBox{position: absolute; bottom:466px; left: 188px; }
+
+
+.pillowBox .bedpillowblue{position: absolute; top: 0; left: 0; opacity: 0; z-index: 2;}
+.pillowBox .bedpillowgreen01{position: absolute; top: 0; left: 163px; opacity: 0; z-index: 1;}
+.pillowBox .bedpillowwhite1{position: absolute; top: 16px; left: 97px; opacity: 0; z-index: 5;}
+.pillowBox .bedpillowwhite2{position: absolute; top: 7px; left: 218px; opacity: 0; z-index: 3;}
+.pillowBox .bedpillowred{position: absolute; top: 46px; left: 208px; opacity: 0; z-index: 6;}
+.pillowBox .bedpillowblack{position: absolute; top: 35px; left: 284px; opacity: 0; z-index: 4;}
+.pillowBox .bedpillowgreen02{position: absolute; top: 84px; left: 302px; opacity: 0; z-index: 7;}
+
+.pillowBox .mainCircle{z-index: 10;bottom: -142px;left: 312px;}
+
+.lightingBox{position: absolute; top: 0; left: 0;}
+.lightingBox .mainCircle{top: 317px; left: 1472px;}
+
+.chairBox{position: absolute; bottom: 74px; right: 350px; opacity: 0;}
+.chairBox .mainCircle{bottom: 164px; left: 54px;}
+
+.tableBox{position: absolute; bottom: 0px; right: 146px; opacity: 0;}
+.tableBox .mainCircle{bottom: 164px; left: 94px;}
+
+.flowerpot{position: absolute; bottom: 0; left: 108px; opacity: 0;}
+.tv{position: absolute; top: 220px; left: 1572px; opacity: 0;}
+.sign{position: absolute; top: 12px; left: 485px; opacity: 0;}
+
+/****** 공통요소들 ******/
+.product .desc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬을 위해 */
+
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+.PopupContainer .product .desc img,
+.PopupContainer .product .desc p,
+.PopupContainer .product .desc .green {margin-right: 10px;}
+.PopupContainer .product .desc .area {font-weight: 900;}
+.PopupContainer .product .desc .stock {color: #cccccc;}
+
+.PopupContainer .product .desc .green{width: 20px; height: 20px; border-radius: 50%; background-color: green;}
+
+.PopupContainer .colorBox{display: flex; align-items: center; justify-content: space-between;}
+.PopupContainer .numberBox .minus,.plus{cursor: pointer;width: 36px;height: 36px; }
+.PopupContainer .numberBox .quantity{
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 42px;
+
+  width: 46px;
+  text-align: center;
+  margin-top: -14px;
+}
+.popupGrayBox .grayPadding .content{
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.004rem;
+  margin-bottom:20px;
+}
+.popupGrayBox .grayPadding .price{
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 56px;
+
+  margin-bottom: 40px;
+} 
+.popupGrayBox .grayPadding .numberBox{
+  width: 100px; height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.popupGrayBox .grayPadding .hart{cursor: pointer;}
+
+
+.grayPadding .basketBox .basketCircle{
+  cursor: pointer;
+  width: 55px; height: 55px; border-radius: 50%; background-color: #34589d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popupGrayBox .grayPadding .newBox{
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬을 위해 */
+  align-items: center; /* 수직 가운데 정렬을 위해 */
+  width: 45px;
+  height: 20px;
+  background-color: #2b5ab5;
+
+  margin-bottom: 20px;
+  padding-top: 2px;
+  padding-left: 1px;
+}
+.popupGrayBox .grayPadding .circleBox{
+  height: 50px; 
+}
+.popupGrayBox .grayPadding .newBox p {margin: 0;color: #fff;}
+.popupGrayBox .grayPadding .blender{font-size: 24px; font-weight: 900; margin-bottom: 10px;}
+.popupGrayBox .grayPadding .mixer{color:#cccccc; font-weight: 400; margin-bottom: 15px;} 
+
+/***** 공통요소 끝 *****/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** bedPopupContainer *****/
+.bedPopupContainer{ 
+  display: none;
+  position: absolute; top: 50%; left: 58%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+
+.bedPopupContainer .bedPopupBox{width: 1200px; height: 466px; background-color: #fff;}
+.bedPopupContainer .bedPopupBox .product{
+  width: 56%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.bedPopupContainer .bedPopupBox .popupGrayBox{
+  width: 40%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+
+.bedPopupContainer .bedPopupBox .product .productBed{
+  position: absolute;
+  top: 60%;
+  left: 49%;
+  transform: translate(-50%, -50%);}
+
+.bedPopupContainer .bedPopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+
+
+
+
+
+.bedPopupContainer .bedPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 0; 
+  background-color: Black;
+  cursor: pointer;
+}
+.bedPopupContainer .bedPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 70px; 
+  background-color: #2d4428;
+  cursor: pointer;
+}
+.bedPopupContainer .bedPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(3){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 140px; 
+  background-color: #2d5491;
+  cursor: pointer;
+}
+
+
+
+.bedPopupContainer .bedPopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px;
+  /* position: absolute; bottom: -20px; right: 0; */
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+
+.bedPopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.bedPopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.bedPopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** pillowPopupContainer *****/
+.pillowPopupContainer{
+  display: none;
+  position: absolute; top: 50%; left: 55%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+.pillowPopupContainer .pillowPopupBox{width: 857px; height: 466px; background-color: #fff;}
+.pillowPopupContainer .pillowPopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.pillowPopupContainer .pillowPopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+
+.pillowPopupContainer .pillowPopupBox .product .productPillow{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
+
+.pillowPopupContainer .pillowPopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+
+
+
+.pillowPopupContainer .pillowPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 0; 
+  background-color: #7c3d3d;
+  cursor: pointer;
+}
+.pillowPopupContainer .pillowPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 70px; 
+  background-color: #2d4428;
+  cursor: pointer;
+}
+.pillowPopupContainer .pillowPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(3){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 140px; 
+  background-color: #2d5491;
+  cursor: pointer;
+}
+.pillowPopupContainer .pillowPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(4){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 210px; 
+  background-color: black;
+  cursor: pointer;
+}
+
+
+
+
+.pillowPopupContainer .pillowPopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px;
+  /* position: absolute; bottom: -20px; right: 0; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+
+.pillowPopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.pillowPopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.pillowPopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** lightPopupContainer *****/
+.lightPopupContainer{
+  display: none;
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+.lightPopupContainer .lightPopupBox{width: 857px; height: 466px; background-color: #fff;}
+.lightPopupContainer .lightPopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.lightPopupContainer .lightPopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+
+.lightPopupContainer .lightPopupBox .product .productLight{
+  position: absolute;
+  top: 56%;
+  left: 48%;
+  transform: translate(-50%, -50%);}
+
+.lightPopupContainer .lightPopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+
+.lightPopupContainer .lightPopupBox .popupGrayBox .content{margin-bottom: 50px;}
+
+
+.lightPopupContainer .lightPopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px;
+  /* position: absolute; bottom: -20px; right: 0; */
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+
+
+.lightPopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.lightPopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.lightPopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** chairPopupContainer *****/
+.chairPopupContainer{
+  display: none;
+  position: absolute; top: 59%; left: 42%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+.chairPopupContainer .chairPopupBox{width: 857px; height: 466px; background-color: #fff;}
+.chairPopupContainer .chairPopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.chairPopupContainer .chairPopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+
+.chairPopupContainer .chairPopupBox .product .productChair{
+  position: absolute;
+  top: 64%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.chairPopupContainer .chairPopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+.chairPopupContainer .chairPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 0; 
+  background-color: #2d4428;
+  cursor: pointer;
+}
+.chairPopupContainer .chairPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 70px; 
+  background-color: #7c3d3d;
+  cursor: pointer;
+}
+.chairPopupContainer .chairPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(3){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 140px; 
+  background-color: #2d5491;
+  cursor: pointer;
+}
+
+
+.chairPopupContainer .chairPopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px;
+  /* position: absolute; bottom: 20px; right: 0; */
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+
+.chairPopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.chairPopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.chairPopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+/***** tablePopupContainer *****/
+.tablePopupContainer{
+  display: none;
+  position: absolute; top: 58%; left: 55%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+.tablePopupContainer .tablePopupBox{width: 857px; height: 466px; background-color: #fff;}
+.tablePopupContainer .tablePopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.tablePopupContainer .tablePopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+
+
+.tablePopupContainer .tablePopupBox .product .productTable{
+  position: absolute;
+  top: 56%;
+  left: 52%;
+  transform: translate(-50%, -50%);}
+
+.tablePopupContainer .tablePopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+.tablePopupContainer .tablePopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 0; 
+  background-color: #fff;
+
+  cursor: pointer;
+}
+.tablePopupContainer .tablePopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 70px; 
+  background-color: #898989; 
+
+  cursor: pointer;
+}
+
+
+
+.tablePopupContainer .tablePopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px;
+  /* position: absolute; bottom: -20px; right: 0; */
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+
+
+
+.tablePopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.tablePopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.tablePopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+/* 
+--pretendard--
+고양점 16pt
+매장 - 재고있음 16
+NEW 16.74
+믹서,60x40 16
+lorem : 16
+IKEA BLENDER 24pt
+
+
+금액, 개수 : [CormorantRoman]
+ */
+
+
+
+.dim {
+  position: relative;
+  height: 100vh;
+  /* 50% 50% :가로 세로 // rgba(0, 0, 0, 0.1) 0% 투명, rgba(0, 0, 0, 0.7) 20% -> 원 크기조절 */
+  /* bed기준 */
+  background: radial-gradient(circle at 46% 78%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+  z-index: 11;
+}
+
+.bedDim {display: none;}
+.pillowDim {
+  display: none;
+  background: radial-gradient(circle at 26.5% 65%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+.lightDim {
+  display: none;
+  background:radial-gradient(circle at 77% 34%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+.chairDim {
+  display: none;
+  background: radial-gradient(circle at 65.5% 73%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+.tableDim {
+  display: none;
+  background: radial-gradient(circle at 81.5% 81%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+
+
+
+@keyframes pulse {
+    0%{
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 0;
+    }
+}
+
+
+
+.menu{
+  position: absolute; 
+  bottom: 40px; left: 50%; transform: translateX(-50%); 
+  width: 516px; height: 81px; background-color: #254b93;
+  border-radius: 40px 40px 40px 40px;
+}
+.menu .menubackground{margin: 0 auto; width: 90%; height: 100%; }
+.menu .menubackground .iconContiner{display: flex; justify-content: space-between; align-items: center;}
+
+.gotoMain {
+  background-color: #fccb00;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex; justify-content: center; align-items: center;
+  cursor: pointer;
+}
+.gotoMain p{font-weight: 900; font-size: 16px;}
+.icon03{margin: 0 20px;}
+
+
+
+
+
+.mainCircle .centerCircle.hovered {background-color: #fccb00;  }
+.mainCircle .borderCircle.hovered {border-radius: 50%; border: 1px solid #fccb00;    }
+.mainCircle .circle.hovered{background-color: #fccb00;}
+
+.mainCircle .centerCircle.clicked {background-color: #fccb00;  }
+.mainCircle .borderCircle.clicked {border-radius: 50%; border: 1px solid #fccb00;}
+.mainCircle .circle.clicked{background-color: #fccb00;}
+
+

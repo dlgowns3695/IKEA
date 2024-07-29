@@ -1,0 +1,978 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.backgroundContainer{position: relative; width: 100dvw; height: 100dvh; min-width: 1800px; min-height: 900px; background: url('/imgs/bathroom/bathroomBg02.png');}
+
+
+
+/***** 서클관련 *****/
+.mainCircle{width: 36px; height: 36px; position: absolute;z-index: 4;cursor: pointer; opacity: 0;}
+.centerCircle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px; height: 10px; background-color: #fff;border-radius: 50%;
+    z-index:4;
+}
+.borderCircle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    width: 36px; height: 36px; background-color: rgba(0,0,0,0.3);border-radius: 50%; border: 1px solid #fff;
+    z-index:4;
+}
+/* 웅웅 거리는 파동 원 */
+.circle {
+    position: absolute;
+    top: -7px;
+    left:-7px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    z-index: 3;
+}
+
+@keyframes pulse {
+    0%{
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 0;
+    }
+}
+
+
+.mainCircle .centerCircle.hovered {background-color: #fccb00;  }
+.mainCircle .borderCircle.hovered {border-radius: 50%; border: 1px solid #fccb00;    }
+.mainCircle .circle.hovered{background-color: #fccb00;}
+
+.mainCircle .centerCircle.clicked {background-color: #fccb00;  }
+.mainCircle .borderCircle.clicked {border-radius: 50%; border: 1px solid #fccb00;}
+.mainCircle .circle.clicked{background-color: #fccb00;}
+
+
+
+
+
+
+/***** 가구상품들 *****/
+/* 바텀9 탑 790 */
+.trashBox {position: absolute;bottom: 9px;left: 50px; opacity: 0;}
+.trashBox .trash{opacity: 1;}
+.trashBox .mainCircle{bottom:115px; left: 88px;}
+
+/* 백그라운드라 따로 이미지 X */
+.towelBox{position: absolute; top:470px; left:200px;}
+.towelBox .mainCircle{top:0; left: 0;}
+
+/* 바텀31 탑 843 */
+.bathroomShoesBox{position: absolute; bottom:31px; left:550px; opacity: 0;}
+.bathroomShoesBox .bathroomShoes{opacity: 1;}
+.bathroomShoesBox .bathroomShoes img{max-width: 90%;}
+.bathroomShoesBox .mainCircle{top:-13px; left: 57px;}
+
+.shampooBox{position: absolute; top:566px; left:982px;}
+.shampooBox .shampoo01{position: absolute; top: 0; left: 0; opacity: 0;}
+.shampooBox .shampoo02{position: absolute; top: -18px; left: 213px; opacity: 0;}
+.shampooBox .shampoo03{position: absolute; top: -14px; left: 235px; opacity: 0;}
+.shampooBox .mainCircle{top:18px; left: 240px;}
+
+/* 백그라운드라 따로 이미지 X */
+.lightingBox{position: absolute; top:216px; left:617px; opacity: 0;}
+.lightingBox .mainCircle{top:70px; left: 856px; }
+
+/* 바텀2 탑804 */
+.tableBox{position: absolute; bottom:2px; right:0px; z-index: 4; opacity: 0;}
+.tableBox .table{opacity: 1;}
+.tableBox .table img{max-width: 80%;}
+.tableBox .mainCircle{top:-8px; left: 33px;} 
+
+
+
+/***** 가구배치 *****/
+/* 탑 811 바텀17 */
+.rug{position: absolute; bottom: 17px; left:710px;}
+
+/* 탑 482px 바텀 1px */
+.bathhouse{position: absolute; bottom:1px; right:0px; z-index: 3; opacity: 0;}
+
+/* left:1775px; 탑740 바텀 136*/
+.tableShampoo{position: absolute; bottom: 136px; right: 80px; z-index: 5; opacity: 0;}
+/* .tableShampoo img{max-width: 85%;} */
+
+
+.leftFlower{position: absolute; top: 474px; left: 739px; opacity: 0;}
+.leftFlower img{max-width: 90%;}
+
+.rightFlower{position: absolute; top: 459px; left: 1431px; opacity: 0;}
+
+.sign{position: absolute; top: 40px; right: 385px; opacity: 0;}
+
+
+
+
+/****** 공통요소들 ******/
+.product .desc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬을 위해 */
+
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+.PopupContainer .product .desc img,
+.PopupContainer .product .desc p,
+.PopupContainer .product .desc .green {margin-right: 10px;}
+.PopupContainer .product .desc .area {font-weight: 900;}
+.PopupContainer .product .desc .stock {color: #cccccc;}
+.PopupContainer .colorBox{display: flex; align-items: center; justify-content: space-between;}
+.PopupContainer .product .desc .green{width: 20px; height: 20px; border-radius: 50%; background-color: green;}
+
+.PopupContainer .numberBox .minus,.plus{cursor: pointer;width: 36px;height: 36px;}
+.PopupContainer .numberBox .quantity{
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 42px;
+
+  width: 46px;
+  text-align: center;
+  margin-top: -16px;
+}
+.popupGrayBox .grayPadding .content{
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.004rem;
+  margin-bottom:20px;
+}
+.popupGrayBox .grayPadding .price{
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 56px;
+
+  margin-bottom: 40px;
+} 
+
+.popupGrayBox .grayPadding .hart{cursor: pointer;}
+
+.hart img {
+  display: none;
+}
+
+.hart img.show {
+  display: block;
+}
+
+.popupGrayBox .grayPadding .numberBox{
+  width: 100px; height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.grayPadding .basketBox .basketCircle{
+  cursor: pointer;
+  width: 55px; height: 55px; border-radius: 50%; background-color: #34589d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popupGrayBox .grayPadding .newBox{
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬을 위해 */
+  align-items: center; /* 수직 가운데 정렬을 위해 */
+  width: 45px;
+  height: 20px;
+  background-color: #2b5ab5;
+
+  margin-bottom: 20px;
+  padding-top: 2px;
+  padding-left: 1px;
+}
+.popupGrayBox .grayPadding .circleBox{
+  height: 50px; 
+}
+.popupGrayBox .grayPadding .newBox p {margin: 0;color: #fff;}
+.popupGrayBox .grayPadding .blender{font-size: 24px; font-weight: 900; margin-bottom: 10px;}
+.popupGrayBox .grayPadding .mixer{color:#cccccc; font-weight: 400; margin-bottom: 15px;} 
+
+/***** 공통요소 끝 *****/
+
+
+
+
+/***** 상품클릭 Dim *****/
+.dim {
+  position: relative;
+  height: 100vh;
+  /* 50% 50% :가로 세로 // rgba(0, 0, 0, 0.1) 0% 투명, rgba(0, 0, 0, 0.7) 20% -> 원 크기조절 */
+  /* trashDim 기준 */
+  background: radial-gradient(circle at 8.5% 85%, rgba(0, 0, 0, 0.1) 5%, rgba(0, 0, 0, 0.8) 12%);
+  z-index: 11;
+}
+
+.trashDim {display: none;}
+.towelDim {
+  display: none;
+  background: radial-gradient(circle at 11% 51%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+.bathroomShoesDim {
+  display: none;
+  background: radial-gradient(circle at 32.5% 89%, rgba(0, 0, 0, 0.1) 5%, rgba(0, 0, 0, 0.8) 12%);
+}
+.shampooDim {
+  display: none;
+  background: radial-gradient(circle at 64.5% 64%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+
+.lightingDim {
+  display: none;
+  background: radial-gradient(circle at 77.5% 36%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+
+.tableDim {
+  display: none;
+  background: radial-gradient(circle at 92% 86%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** 팝업들 *****/
+.trashPopupContainer{ 
+  display: none;
+  position: absolute; top: 66%; left: 34%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+
+.trashPopupContainer .trashPopupBox{width: 880px; height: 466px; background-color: #fff;}
+.trashPopupContainer .trashPopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.trashPopupContainer .trashPopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+
+
+.trashPopupContainer .trashPopupBox .product .productTrash{
+  position: absolute;
+  top: 52%;
+  left: 54%;
+  transform: translate(-50%, -50%);}
+
+.trashPopupContainer .trashPopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+
+
+.trashPopupContainer .trashPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 0; 
+  background-color: black;
+  cursor: pointer;
+}
+.trashPopupContainer .trashPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 70px; 
+  background-color: #7c3d3d;
+  cursor: pointer;
+}
+.trashPopupContainer .trashPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(3){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 140px; 
+  background-color: #2d4428;
+  cursor: pointer;
+}
+.trashPopupContainer .trashPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(4){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 210px; 
+  background-color: #2d5491;
+  cursor: pointer;
+}
+
+.trashPopupContainer .trashPopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px; 
+  
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+.trashPopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.trashPopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.trashPopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+.towelPopupContainer{ 
+  display: none;
+  position: absolute; top: 36%; left: 40%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+
+.towelPopupContainer .towelPopupBox{width: 880px; height: 466px; background-color: #fff;}
+.towelPopupContainer .towelPopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.towelPopupContainer .towelPopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+
+
+.towelPopupContainer .towelPopupBox .product .productTowel{
+  position: absolute;
+  top: 55%;
+  left: 52%;
+  transform: translate(-50%, -50%);}
+
+.towelPopupContainer .towelPopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+
+
+.towelPopupContainer .towelPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 0; 
+  background-color: #fff;
+  cursor: pointer;
+}
+.towelPopupContainer .towelPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 70px; 
+  background-color: #3d3d3d;
+  cursor: pointer;
+}
+
+
+.towelPopupContainer .towelPopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px; 
+  
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+
+
+
+.towelPopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.towelPopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.towelPopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bathroomShoesPopupContainer{ 
+  display: none;
+  position: absolute; top: 58%; left: 46%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+
+.bathroomShoesPopupContainer .bathroomShoesPopupBox{width: 880px; height: 466px; background-color: #fff;}
+.bathroomShoesPopupContainer .bathroomShoesPopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.bathroomShoesPopupContainer .bathroomShoesPopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+
+
+.bathroomShoesPopupContainer .bathroomShoesPopupBox .product .productBathroomShoes{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
+
+.bathroomShoesPopupContainer .bathroomShoesPopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+
+/* 수정 */
+.bathroomShoesPopupContainer .bathroomShoesPopupBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 0; 
+  background-color: #fff;
+  cursor: pointer;
+}
+.bathroomShoesPopupContainer .bathroomShoesPopupBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 70px; 
+  background-color: #2d4428;
+  cursor: pointer;
+}
+.bathroomShoesPopupContainer .bathroomShoesPopupBox .grayPadding .circleBox .circleColor:nth-of-type(3){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 140px; 
+  background-color: #6f4f28;
+  cursor: pointer;
+}
+
+.bathroomShoesPopupContainer .bathroomShoesPopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px; 
+  
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+.bathroomShoesPopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.bathroomShoesPopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.bathroomShoesPopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+.shampooPopupContainer{ 
+  display: none;
+  position: absolute; top: 32%; left: 57%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+
+.shampooPopupContainer .shampooPopupBox{width: 880px; height: 466px; background-color: #fff;}
+.shampooPopupContainer .shampooPopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.shampooPopupContainer .shampooPopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+
+.shampooPopupContainer .shampooPopupBox .popupGrayBox .grayPadding .content{margin-bottom: 50px;}
+.shampooPopupContainer .shampooPopupBox .product .productShampoo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
+
+.shampooPopupContainer .shampooPopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+
+
+.shampooPopupContainer .shampooPopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px; 
+  
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+.shampooPopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.shampooPopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.shampooPopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lightingPopupContainer{ 
+  display: none;
+  position: absolute; top: 46%; left: 52%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+
+.lightingPopupContainer .lightingPopupBox{width: 880px; height: 466px; background-color: #fff;}
+.lightingPopupContainer .lightingPopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.lightingPopupContainer .lightingPopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+.lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding .content{margin-bottom: 50px;}
+
+.lightingPopupContainer .lightingPopupBox .product .productLighting{
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
+
+.lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+
+
+/* 수정 */
+.lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 0; 
+  background-color: #bc966e;
+  cursor: pointer;
+}
+.lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 70px; 
+  background-color: #2d5491;
+  cursor: pointer;
+}
+.lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(3){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 140px; 
+  background-color: #2d4428;
+  cursor: pointer;
+}
+
+.lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px; 
+  
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+
+
+
+.lightingPopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.lightingPopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.lightingPopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tablePopupContainer{
+  display: none;
+  position: absolute; top: 65%; left: 66%; transform: translate(-50%,-50%);
+  z-index: 12;
+}
+.tablePopupContainer .tablePopupBox{width: 857px; height: 466px; background-color: #fff;}
+.tablePopupContainer .tablePopupBox .product{
+  width: 46%; height: 91%;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  
+}
+
+.tablePopupContainer .tablePopupBox .popupGrayBox{
+  width: 48%;
+  height: 91%;
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+
+  
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+
+.tablePopupContainer .tablePopupBox .popupGrayBox .grayPadding .content{margin-bottom: 50px;}
+
+.tablePopupContainer .tablePopupBox .product .productTable{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
+
+.tablePopupContainer .tablePopupBox .popupGrayBox .grayPadding{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  
+}
+
+
+/* 수정 */
+.lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 0; 
+  background-color: #bc966e;
+  cursor: pointer;
+}
+.lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 70px; 
+  background-color: #2d5491;
+  cursor: pointer;
+}
+.lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(3){
+  width: 40px; height: 40px; border-radius: 50%;
+  position: absolute; top: 270px; left: 140px; 
+  background-color: #2d4428;
+  cursor: pointer;
+}
+
+.tablePopupContainer .tablePopupBox .popupGrayBox .grayPadding .basketBox{
+  width: 110px;
+  
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+
+
+
+
+.tablePopupContainer .close {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  width: 48px;
+  height: 48px;
+  background-color: #2b5ab5;
+  display: flex; /*수평수직을위해*/
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.tablePopupContainer .close .close01 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+.tablePopupContainer .close .close02 {
+  width: 2px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** 아래 메뉴바 *****/
+.menu{
+  z-index: 10;
+  position: absolute; 
+  bottom: 40px; left: 50%; transform: translateX(-50%); 
+  width: 516px; height: 81px; background-color: #254b93;
+  border-radius: 40px 40px 40px 40px;
+}
+.menu .menubackground{margin: 0 auto; width: 90%; height: 100%; }
+.menu .menubackground .iconContiner{display: flex; justify-content: space-between; align-items: center;}
+
+.gotoMain {
+  background-color: #fccb00;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex; justify-content: center; align-items: center;
+  cursor: pointer;
+}
+.gotoMain p{font-weight: 900; font-size: 16px;}
+.icon03{margin: 0 20px;}

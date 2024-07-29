@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap');
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.backgroundContainer{position: relative; width: 100dvw; height: 100dvh; min-width: 1800px; min-height: 900px; background: url('/imgs/livingroom/LIVINGROOMbg.png'); overflow: hidden; }
+
+
+.cormorant-test {
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 48px;
+    font-style: normal;
+}
+.test{font-size: 48px;}
+
+
+
+
+
+
+/***** 상품클릭 Dim *****/
+.dim {
+  position: relative;
+  height: 100vh;
+  /* 50% 50% :가로 세로 // rgba(0, 0, 0, 0.1) 0% 투명, rgba(0, 0, 0, 0.7) 20% -> 원 크기조절 */
+  /* lightingDim 기준 */
+  background: radial-gradient(circle at 32% 39%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+  z-index: 11;
+}
+
+.lightingDim {display: none;}
+.sofaDim {
+  display: none;
+  background: radial-gradient(circle at 37.5% 74%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+.chairDim {
+  display: none;
+  background: radial-gradient(circle at 63.5% 79%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+.curtainDim {
+  display: none;
+  background: radial-gradient(circle at 68.5% 30%, rgba(0, 0, 0, 0.1) 7%, rgba(0, 0, 0, 0.8) 15%);
+}
+
+
+
+
+
+
+/***** 서클관련 *****/
+.mainCircle{width: 36px; height: 36px; position: absolute;z-index: 4;cursor: pointer; opacity: 0;}
+.centerCircle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px; height: 10px; background-color: #fff;border-radius: 50%;
+    z-index:4;
+}
+.borderCircle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    width: 36px; height: 36px; background-color: rgba(0,0,0,0.3);border-radius: 50%; border: 1px solid #fff;
+    z-index:4;
+}
+/* 웅웅 거리는 파동 원 */
+.circle {
+    position: absolute;
+    top: -7px;
+    left:-7px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    z-index: 3;
+}
+
+@keyframes pulse {
+    0%{
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 0;
+    }
+}
+
+
+.mainCircle .centerCircle.hovered {background-color: #fccb00;  }
+.mainCircle .borderCircle.hovered {border-radius: 50%; border: 1px solid #fccb00;    }
+.mainCircle .circle.hovered{background-color: #fccb00;}
+
+.mainCircle .centerCircle.clicked {background-color: #fccb00;  }
+.mainCircle .borderCircle.clicked {border-radius: 50%; border: 1px solid #fccb00;}
+.mainCircle .circle.clicked{background-color: #fccb00;}
+
+
+
+
+
+
+
+/***** 가구상품들 *****/
+.sofaBox{position: absolute; bottom: 0px; left: 48px; z-index: 2; opacity: 0;}
+.sofaBox .sofa img{ max-width: 90%;}
+.sofaBox .mainCircle{bottom: 234px; left: 654px; }
+
+.lightingBox{position: absolute; top:316px; left:542px; opacity: 0;}
+.lightingBox .mainCircle{top:44px; left: 62px; }
+
+.chairBox{position: absolute; bottom:26px; right:510px; z-index: 2; opacity: 0;}
+.chairBox .mainCircle{top:124px; left: 136px; }
+
+.curtainBox{position: absolute; top: 0; left: 0;}
+.curtainBox .mainCircle{top: 270px; left: 1300px;}
+
+
+
+
+
+
+
+/***** 가구배치 *****/
+.rug{position: absolute; bottom: 10px; left:460px;}
+.rug img{max-width: 95%;}
+
+.leftLight{position: absolute;top: 186px; left: 60px;}
+.frame{position: absolute;top: 240px; left: 30px;}
+/* 왼쪽 꽃은 소파 나오고 나와야 가려지는게 정상임 */
+.leftFlower{position: absolute;bottom: 130px; left: 60px; opacity: 0;transition: opacity 1s;}
+.tvSpeeker{position: absolute;top: 359px; left: 807px; opacity: 0;transition: opacity 1s;}
+.rightFlower01,.rightFlower02{position: absolute;bottom: 137px; right: 96px;}
+
+.rightFlower01{opacity: 0;transition: opacity 1s;}
+.rightFlower02{opacity: 0;transition: opacity 1s;}
+/* bottom: 135px; right: -85px; 오버플로우 제거시 대략 */
+.doorSideCurtain{position: absolute;bottom: 88px; right: -65px;}
+.sign{position: absolute; top: 37px; left: 258px; opacity: 0;transition: opacity 1s;}
+
+
+
+
+/****** 공통요소들 ******/
+.product .desc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬을 위해 */
+
+  font-family: "Pretendard-Regular", serif;
+  font-size: 16px;
+}
+.PopupContainer .product .desc img,
+.PopupContainer .product .desc p,
+.PopupContainer .product .desc .green {margin-right: 10px;}
+.PopupContainer .product .desc .area {font-weight: 900;}
+.PopupContainer .product .desc .stock {color: #cccccc;}
+.PopupContainer .colorBox{display: flex; align-items: center; justify-content: space-between;}
+.PopupContainer .product .desc .green{width: 20px; height: 20px; border-radius: 50%; background-color: green;}
+
+.PopupContainer .numberBox .minus,.plus{cursor: pointer;width: 36px;height: 36px;}
+.PopupContainer .numberBox .quantity{
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 42px;
+
+  width: 46px;
+  text-align: center;
+  margin-top: -16px;
+}
+.popupGrayBox .grayPadding .content{
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.004rem;
+  margin-bottom:20px;
+}
+.popupGrayBox .grayPadding .price{
+  font-family: "Cormorant", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 56px;
+
+  margin-bottom: 40px;
+} 
+
+.popupGrayBox .grayPadding .hart{cursor: pointer;}
+
+.hart img {
+  display: none;
+}
+
+.hart img.show {
+  display: block;
+}
+
+.popupGrayBox .grayPadding .numberBox{
+  width: 100px; height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.grayPadding .basketBox .basketCircle{
+  cursor: pointer;
+  width: 55px; height: 55px; border-radius: 50%; background-color: #34589d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popupGrayBox .grayPadding .newBox{
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬을 위해 */
+  align-items: center; /* 수직 가운데 정렬을 위해 */
+  width: 45px;
+  height: 20px;
+  background-color: #2b5ab5;
+
+  margin-bottom: 20px;
+  padding-top: 2px;
+  padding-left: 1px;
+}
+.popupGrayBox .grayPadding .circleBox{
+  height: 50px; 
+}
+.popupGrayBox .grayPadding .newBox p {margin: 0;color: #fff;}
+.popupGrayBox .grayPadding .blender{font-size: 24px; font-weight: 900; margin-bottom: 10px;}
+.popupGrayBox .grayPadding .mixer{color:#cccccc; font-weight: 400; margin-bottom: 15px;} 
+
+/***** 공통요소 끝 *****/
+
+
+
+
+
+
+/***** 팝업들 *****/
+.lightingPopupContainer{ 
+    display: none;
+    position: absolute; top: 50%; left: 57%; transform: translate(-50%,-50%);
+    z-index: 12;
+}
+  
+  .lightingPopupContainer .lightingPopupBox{width: 880px; height: 466px; background-color: #fff;}
+  .lightingPopupContainer .lightingPopupBox .product{
+    width: 46%; height: 91%;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    
+  }
+  
+  .lightingPopupContainer .lightingPopupBox .popupGrayBox{
+    width: 48%;
+    height: 91%;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+  
+    
+    font-family: "Pretendard-Regular", serif;
+    font-size: 16px;
+  }
+
+
+
+  .lightingPopupContainer .lightingPopupBox .product .productLighting{
+    position: absolute;
+    top: 52%;
+    left: 57%;
+    transform: translate(-50%, -50%);}
+  
+  .lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    
+  }
+
+  .lightingPopupContainer .lightingPopupBox .popupGrayBox .content{margin-bottom: 50px;}
+  
+  .lightingPopupContainer .lightingPopupBox .popupGrayBox .grayPadding .basketBox{
+    width: 110px;
+    
+    
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  } 
+
+  
+
+  
+  .lightingPopupContainer .close {
+    position: absolute;
+    top: 0;
+    right: -48px;
+    width: 48px;
+    height: 48px;
+    background-color: #2b5ab5;
+    display: flex; /*수평수직을위해*/
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+  }
+  
+  .lightingPopupContainer .close .close01 {
+    width: 2px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(45deg);
+  }
+  .lightingPopupContainer .close .close02 {
+    width: 2px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(-45deg);
+  }
+
+
+
+
+
+
+
+
+  .sofaPopupContainer{ 
+    display: none;
+    position: absolute; top: 44%; left: 50%; transform: translate(-50%,-50%);
+    z-index: 12;
+}
+  
+  .sofaPopupContainer .sofaPopupBox{width: 880px; height: 460px; background-color: #fff;}
+  .sofaPopupContainer .sofaPopupBox .product{
+    width: 46%; height: 91%;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    
+  }
+  
+  .sofaPopupContainer .sofaPopupBox .popupGrayBox{
+    width: 48%;
+    height: 91%;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+  
+    
+    font-family: "Pretendard-Regular", serif;
+    font-size: 16px;
+  }
+
+
+  .sofaPopupContainer .sofaPopupBox .product .productSofa{
+    position: absolute;
+    top: 60%;
+    left: 52%;
+    transform: translate(-50%, -50%);}
+  
+  .sofaPopupContainer .sofaPopupBox .popupGrayBox .grayPadding{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    
+  }
+
+
+  .sofaPopupContainer .sofaPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+    width: 40px; height: 40px; border-radius: 50%;
+    position: absolute; top: 270px; left: 0; 
+    background-color: #f29039;
+    /* 기본오렌지색상 */
+    cursor: pointer;
+  }
+  .sofaPopupContainer .sofaPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+    width: 40px; height: 40px; border-radius: 50%;
+    position: absolute; top: 270px; left: 70px; 
+    background-color: #0f5621;
+    cursor: pointer;
+  }
+  
+  
+  .sofaPopupContainer .sofaPopupBox .popupGrayBox .grayPadding .basketBox{
+    width: 110px; 
+    
+    
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  } 
+
+
+  .sofaPopupContainer .close {
+    position: absolute;
+    top: 0;
+    right: -48px;
+    width: 48px;
+    height: 48px;
+    background-color: #2b5ab5;
+    display: flex; /*수평수직을위해*/
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+  }
+  
+  .sofaPopupContainer .close .close01 {
+    width: 2px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(45deg);
+  }
+  .sofaPopupContainer .close .close02 {
+    width: 2px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(-45deg);
+  }
+
+
+
+
+
+
+
+
+
+
+
+  .chairPopupContainer{
+    display: none;
+    position: absolute; top: 51%; left: 44%; transform: translate(-50%,-50%);
+    z-index: 12;
+  }
+  .chairPopupContainer .chairPopupBox{width: 857px; height: 466px; background-color: #fff;}
+  .chairPopupContainer .chairPopupBox .product{
+    width: 46%; height: 91%;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    
+  }
+  
+  .chairPopupContainer .chairPopupBox .popupGrayBox{
+    width: 48%;
+    height: 91%;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+  
+    
+    font-family: "Pretendard-Regular", serif;
+    font-size: 16px;
+  }
+
+  
+  .chairPopupContainer .chairPopupBox .product .productChair{
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);}
+  
+  .chairPopupContainer .chairPopupBox .popupGrayBox .grayPadding{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    
+  }
+
+
+
+  .chairPopupContainer .chairPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+    width: 40px; height: 40px; border-radius: 50%;
+    position: absolute; top: 270px; left: 0; 
+    background-color: #2d4428;
+    /* 기본.초록색상 */
+    cursor: pointer;
+  }
+
+  .chairPopupContainer .chairPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+    width: 40px; height: 40px; border-radius: 50%;
+    position: absolute; top: 270px; left: 70px; 
+    background-color: #212d60;
+    /* 어두운파랑*/
+    cursor: pointer;
+  }
+
+
+  
+  .chairPopupContainer .chairPopupBox .popupGrayBox .grayPadding .basketBox{
+    width: 110px; 
+    
+    
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  } 
+
+  
+
+  
+  
+  .chairPopupContainer .close {
+    position: absolute;
+    top: 0;
+    right: -48px;
+    width: 48px;
+    height: 48px;
+    background-color: #2b5ab5;
+    display: flex; /*수평수직을위해*/
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+  }
+  
+  .chairPopupContainer .close .close01 {
+    width: 2px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(45deg);
+  }
+  .chairPopupContainer .close .close02 {
+    width: 2px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(-45deg);
+  }
+  
+
+
+
+
+
+
+
+
+
+
+  .curtainPopupContainer{ 
+    display: none;
+    position: absolute; top: 40%; left: 43%; transform: translate(-50%,-50%);
+    z-index: 12;
+}
+  
+  .curtainPopupContainer .curtainPopupBox{width: 880px; height: 466px; background-color: #fff;}
+  .curtainPopupContainer .curtainPopupBox .product{
+    width: 42%; height: 91%;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    
+  }
+  
+  .curtainPopupContainer .curtainPopupBox .popupGrayBox{
+    width: 52%;
+    height: 91%;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+  
+    
+    font-family: "Pretendard-Regular", serif;
+    font-size: 16px;
+  }
+
+
+  .curtainPopupContainer .curtainPopupBox .product .productCurtain{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);}
+  
+  .curtainPopupContainer .curtainPopupBox .popupGrayBox .grayPadding{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    
+  }
+
+  .curtainPopupContainer .curtainPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(1){
+    width: 40px; height: 40px; border-radius: 50%;
+    position: absolute; top: 270px; left: 0; 
+    background-color: black;
+    /* 기본색상 */
+    cursor: pointer;
+  }
+  .curtainPopupContainer .curtainPopupBox .popupGrayBox .grayPadding .circleBox .circleColor:nth-of-type(2){
+    width: 40px; height: 40px; border-radius: 50%;
+    position: absolute; top: 270px; left: 70px; 
+    background-color: #181f3e;
+    /* 어두운파랑 */
+    cursor: pointer;
+  }
+
+  .curtainPopupContainer .curtainPopupBox .popupGrayBox .grayPadding .basketBox{
+    width: 110px; 
+   
+    
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  } 
+
+
+  
+  
+  .curtainPopupContainer .close {
+    position: absolute;
+    top: 0;
+    right: -48px;
+    width: 48px;
+    height: 48px;
+    background-color: #2b5ab5;
+    display: flex; /*수평수직을위해*/
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer;
+  }
+  
+  .curtainPopupContainer .close .close01 {
+    width: 2px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(45deg);
+  }
+  .curtainPopupContainer .close .close02 {
+    width: 2px;
+    height: 40px;
+    background-color: #fff;
+    transform: rotate(-45deg);
+  }
+
+
+
+
+
+
+/***** 아래 메뉴바 *****/
+.menu{
+    z-index: 10;
+    position: absolute; 
+    bottom: 40px; left: 50%; transform: translateX(-50%); 
+    width: 516px; height: 81px; background-color: #254b93;
+    border-radius: 40px 40px 40px 40px;
+  }
+  .menu .menubackground{margin: 0 auto; width: 90%; height: 100%; }
+  .menu .menubackground .iconContiner{display: flex; justify-content: space-between; align-items: center;}
+  
+  .gotoMain {
+    background-color: #fccb00;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer;
+  }
+  .gotoMain p{font-weight: 900; font-size: 16px;}
+  .icon03{margin: 0 20px;}
+  
+  
+

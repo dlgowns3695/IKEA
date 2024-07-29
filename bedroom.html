@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bedroom</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bedroom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="backgroundContainer">
+        <!-- 추후 딤5개, 가구 클릭했을 때 음영을 위한 딤, ex)침대클릭시 침대 dim on, 나머지 off, 1920 980-->
+        <div class="bedDim dim"></div>
+        <div class="pillowDim dim"></div>
+        <div class="lightDim dim"></div>
+        <div class="chairDim dim"></div>
+        <div class="tableDim dim"></div>
+
+        <div class="rug">
+            <img src="imgs/bedroom/rug.png" alt="">
+        </div>
+        <!-- 각 원 위치 잡기 //  -->
+
+        <div>
+            <!-- bed -->
+            <div class="bedBox">
+                <div class="bed">
+                    <img src="imgs/bedroom/bed02.png" alt="">
+                </div>
+                
+                <!-- livingRoom 의 원 // 호버시 centerCircle 색 노랑, borderCircle 보더 컬러 노랑  -->
+                <div class="mainCircle">
+                    <div class="borderCircle"></div>
+                    <div class="centerCircle"></div>
+                    <div class="circle clickpointer bedcircle"></div>
+                </div>
+                <!-- <img class="livingHover" src="imgs/LIVINGROOMhover.png" alt="LIVINGROOM"> -->
+            </div>
+
+            <!-- bedRoomBox 위치를 위한 큰 틀 -->
+            <div class="pillowBox">
+                
+                <div class="bedpillowblue">
+                    <img src="imgs/bedroom/bedpillowblue.png" alt="">
+                </div>
+
+                <div class="bedpillowgreen01">
+                    <img src="imgs/bedroom/bedpillowgreen01.png" alt="">
+                </div>
+
+                <div class="bedpillowwhite1">
+                    <img src="imgs/bedroom/bedpillowwhite1.png" alt="">
+                </div>
+
+                <div class="bedpillowwhite2">
+                    <img src="imgs/bedroom/bedpillowwhite2.png" alt="">
+                </div>
+
+                <div class="bedpillowred">
+                    <img src="imgs/bedroom/bedpillowred.png" alt="">
+                </div>
+
+                <div class="bedpillowblack">
+                    <img src="imgs/bedroom/bedpillowblack.png" alt="">
+                </div>
+
+                <div class="bedpillowgreen02">
+                    <img src="imgs/bedroom/bedpillowgreen02.png" alt="">
+                </div>
+
+                
+                
+                <!-- mainCircle 의 원 -->
+                <div class="mainCircle">
+                    <div class="borderCircle"></div>
+                    <div class="centerCircle"></div>
+                    <div class="circle clickpointer pillowcircle"></div>
+                </div>
+                <!-- <img class="bedHover" src="imgs/BEDROOMhover.png" alt="BEDROOM"> -->
+            </div>
+            
+            <div class="lightingBox">
+                <div>
+                    <img src="" alt="">
+                </div>
+                
+                <div class="mainCircle">
+                    <div class="borderCircle"></div>
+                    <div class="centerCircle"></div>
+                    <div class="circle clickpointer lightingcircle"></div>
+                </div>
+                <!-- <img class="kitchenHover" src="imgs/KITCHENhover.png" alt="KITCHEN"> -->
+            </div>
+
+            <div class="chairBox">
+                <div class="chair">
+                    <img src="imgs/bedroom/chair.png" alt="">
+                </div>
+                <div class="mainCircle">
+                    <div class="borderCircle"></div>
+                    <div class="centerCircle"></div>
+                    <div class="circle clickpointer chaircircle"></div>
+                </div>
+                <!-- <img class="bathHover" src="imgs/BATHROOMhover.png" alt="BATHROOM"> -->
+            </div>
+
+
+            <div class="tableBox">
+                <div class="table">
+                    <img src="imgs/bedroom/table.png" alt="">
+                </div>
+                <div class="mainCircle">
+                    <div class="borderCircle"></div>
+                    <div class="centerCircle"></div>
+                    <div class="circle clickpointer tablecircle"></div>
+                </div>
+                <!-- <img class="bathHover" src="imgs/BATHROOMhover.png" alt="BATHROOM"> -->   
+            </div>
+
+        </div>
+
+        <!-- 가구 배치 -->
+        <div>
+            <div class="flowerpot">
+                <img src="imgs/bedroom/flowerpot.png" alt="">
+            </div>
+            <div class="tv">
+                <img src="imgs/bedroom/tv.png" alt="">
+            </div>
+            <div class="sign">
+                <img src="imgs/bedroom/sign.png" alt="">
+            </div>
+        </div>
+
+
+        <!-- <p class="cormorant-test">
+            239,000
+        </p> -->
+
+        <div class="bedPopupContainer PopupContainer">
+            <!-- bedPopup전체 큰 흰박스 -->
+            <div class="bedPopupBox">
+                <div class="product">
+                    <div class="desc">
+                        <!-- 고양점, 서클, 매장 - 재고있음 -->
+                        <img src="imgs/icon.png" alt="">
+                        <p class="area">고양점</p>
+                        <div class="green"></div>
+                        <p class="stock">매장 - 재고있음</p>
+                    </div>
+                    <div class="productBed">
+                        <img src="imgs/bedroom/bedPopupBlack.png" alt="Bed">
+                    </div>
+                </div>
+                <div class="popupGrayBox">
+                    <div class="grayPadding">
+                        <div class="newBox">
+                            <p>NEW</p>
+                        </div>
+                        <p class="blender">IKEA BLENDER</p>
+                        <p class="mixer">믹서, 60X40cm</p>
+                        <p class="price">717000</p>
+                        <p class="content">Lorem ipsum dolor sit ament, consectetur adipiscing elit, sed do eisumod tempor incididunt ut labore et</p>
+                        <div class="circleBox">
+                            <div class="circleColor" data-color="Black"></div>
+                            <div class="circleColor" data-color="Green"></div>
+                            <div class="circleColor" data-color="Blue"></div>
+                        </div>
+
+                        <div class="colorBox">
+                            <div class="numberBox">
+                                <div class="minus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                      </svg>
+                                      
+                                </div>
+                                <div class="quantity">
+                                    <p>1</p>
+                                </div>
+                                <div class="plus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                      </svg>
+                                      
+                                </div>
+                            </div>
+    
+                            <div class="basketBox">
+                                <div class="basketCircle">
+                                    <img src="imgs/basket.png" alt="">
+                                </div>
+                                <div class="hart">
+                                    <img class="img1 show" src="imgs/hartIcon.png">
+                                    <img class="img2" src="imgs/hartIconClick.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="close">
+                <div class="close01"></div>
+                <div class="close02"></div>
+            </div>
+        </div>
+
+        
+        <div class="pillowPopupContainer PopupContainer">
+            <!-- bedPopup전체 큰 흰박스 -->
+            <!-- close, newBOx #2b5ab5; , 붉은색상 #7c3d3d, 녹색 #2d4428, 파랑 #2d5491, 장바구니 #34589d  -->
+            <div class="pillowPopupBox">
+                <!-- 베개와 상표? 담을 큰 회색박스 #f1f1f1 -->
+                <div class="product">
+                    <div class="desc">
+                        <!-- 고양점, 서클, 매장 - 재고있음 -->
+                        <img src="imgs/icon.png" alt="">
+                        <p class="area">고양점</p>
+                        <div class="green"></div>
+                        <p class="stock">매장 - 재고있음</p>
+                    </div>
+                    <div class="productPillow">
+                        <img src="imgs/bedroom/pillowPopupRed.png" alt="Pillow">
+                    </div>
+                </div>
+                <div class="popupGrayBox">
+                    <div class="grayPadding">
+                        <div class="newBox">
+                            <p>NEW</p>
+                        </div>
+                        <p class="blender">IKEA BLENDER</p>
+                        <p class="mixer">믹서, 60X40cm</p>
+                        <p class="price">39000</p>
+                        <p class="content">Lorem ipsum dolor sit ament, consectetur adipiscing elit, sed do eisumod tempor incididunt ut labore et</p>
+                        <div class="circleBox">
+                            <div class="circleColor" data-color="Red"></div>
+                            <div class="circleColor" data-color="Green"></div>
+                            <div class="circleColor" data-color="Blue"></div>
+                            <div class="circleColor" data-color="Black"></div>
+                        </div>
+
+                        <div class="colorBox">
+                            <div class="numberBox">
+                                <div class="minus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                      </svg>
+                                      
+                                </div>
+                                <div class="quantity">
+                                    <p>1</p>
+                                </div>
+                                <div class="plus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                      </svg>
+                                      
+                                </div>
+                            </div>
+    
+                            <div class="basketBox">
+                                <div class="basketCircle">
+                                    <img src="imgs/basket.png" alt="">
+                                </div>
+                                <div class="hart">
+                                    <img class="img1 show" src="imgs/hartIcon.png">
+                                    <img class="img2" src="imgs/hartIconClick.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="close">
+                <!-- 작대기1,2 -->
+                <div class="close01"></div>
+                <div class="close02"></div>
+            </div>
+        </div>
+
+        <div class="lightPopupContainer PopupContainer">
+            <!-- bedPopup전체 큰 흰박스 -->
+            <div class="lightPopupBox">
+                <div class="product">
+                    <div class="desc">
+                        <!-- 고양점, 서클, 매장 - 재고있음 -->
+                        <img src="imgs/icon.png" alt="">
+                        <p class="area">고양점</p>
+                        <div class="green"></div>
+                        <p class="stock">매장 - 재고있음</p>
+                    </div>
+                    <div class="productLight">
+                        <img src="imgs/bedroom/lightPopup.png" alt="Light">
+                    </div>
+                </div>
+                <div class="popupGrayBox">
+                    <div class="grayPadding">
+                        <div class="newBox">
+                            <p>NEW</p>
+                        </div>
+                        <p class="blender">IKEA BLENDER</p>
+                        <p class="mixer">믹서, 60X40cm</p>
+                        <p class="price">59000</p>
+                        <p class="content">Lorem ipsum dolor sit ament, consectetur adipiscing elit, sed do eisumod tempor incididunt ut labore et</p>
+
+
+                        <div class="colorBox">
+                            <div class="numberBox">
+                                <div class="minus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                      </svg>
+                                      
+                                </div>
+                                <div class="quantity">
+                                    <p>1</p>
+                                </div>
+                                <div class="plus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                      </svg>
+                                      
+                                </div>
+                            </div>
+    
+                            <div class="basketBox">
+                                <div class="basketCircle">
+                                    <img src="imgs/basket.png" alt="">
+                                </div>
+                                <div class="hart">
+                                    <img class="img1 show" src="imgs/hartIcon.png">
+                                    <img class="img2" src="imgs/hartIconClick.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="close">
+                
+                <div class="close01"></div>
+                <div class="close02"></div>
+            </div>
+        </div>
+
+        <div class="chairPopupContainer PopupContainer">
+            <!-- bedPopup전체 큰 흰박스 -->
+            <div class="chairPopupBox">
+                <div class="product">
+                    <div class="desc">
+                        <!-- 고양점, 서클, 매장 - 재고있음 -->
+                        <img src="imgs/icon.png" alt="">
+                        <p class="area">고양점</p>
+                        <div class="green"></div>
+                        <p class="stock">매장 - 재고있음</p>
+                    </div>
+                    
+                    <div class="productChair">
+                        <!-- <div class="red"><img src="imgs/bedroom/chairPopupRed.png" alt=""></div> -->
+                        <!-- 기본, 초록색 -->
+                        <div class="green"><img src="imgs/bedroom/chairPopupGreen.png" alt="Chair"></div>
+                        <!-- <div class="blue"><img src="imgs/bedroom/chairPopupBlue.png" alt=""></div> -->
+                        
+                        
+                    </div>
+                </div>
+                <div class="popupGrayBox">
+                    <div class="grayPadding">
+                        <div class="newBox">
+                            <p>NEW</p>
+                        </div>
+                        <p class="blender">IKEA BLENDER</p>
+                        <p class="mixer">믹서, 60X40cm</p>
+                        <p class="price">49000</p>
+                        <p class="content">Lorem ipsum dolor sit ament, consectetur adipiscing elit, sed do eisumod tempor incididunt ut labore et</p>
+                        <div class="circleBox">
+                            <!-- 몇개가 들어갈지 모름, 배열 -->
+                            <div class="circleColor" data-color="Green"></div>
+                            <div class="circleColor" data-color="Red"></div>
+                            <div class="circleColor" data-color="Blue"></div>
+                        </div>
+
+                        <div class="colorBox">
+                            <div class="numberBox">
+                                <div class="minus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                      </svg>
+                                      
+                                </div>
+                                <div class="quantity">
+                                    <p>1</p>
+                                </div>
+                                <div class="plus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                      </svg>
+                                      
+                                </div>
+                            </div>
+    
+                            <div class="basketBox">
+                                <div class="basketCircle">
+                                    <img src="imgs/basket.png" alt="">
+                                </div>
+                                <div class="hart">
+                                    <img class="img1 show" src="imgs/hartIcon.png">
+                                    <img class="img2" src="imgs/hartIconClick.png">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="close">
+                
+                <div class="close01"></div>
+                <div class="close02"></div>
+            </div>
+        </div>
+
+        <div class="tablePopupContainer PopupContainer">
+            <!-- bedPopup전체 큰 흰박스 -->
+            <div class="tablePopupBox">
+                <div class="product">
+                    <div class="desc">
+                        <!-- 고양점, 서클, 매장 - 재고있음 -->
+                        <img src="imgs/icon.png" alt="">
+                        <p class="area">고양점</p>
+                        <div class="green"></div>
+                        <p class="stock">매장 - 재고있음</p>
+                    </div>
+                    <div class="productTable">
+                        <img src="imgs/bedroom/tablePopupWhite.png" alt="Table">
+                    </div>
+                </div>
+                <div class="popupGrayBox">
+                    <div class="grayPadding">
+                        <div class="newBox">
+                            <p>NEW</p>
+                        </div>
+                        <p class="blender">IKEA BLENDER</p>
+                        <p class="mixer">믹서, 60X40cm</p>
+                        <p class="price">119000</p>
+                        <p class="content">Lorem ipsum dolor sit ament, consectetur adipiscing elit, sed do eisumod tempor incididunt ut labore et</p>
+                        <div class="circleBox">
+                            <div class="circleColor" data-color="White"></div>
+                            <div class="circleColor" data-color="Gray"></div>
+                        </div>
+
+                        <div class="colorBox">
+                            <div class="numberBox">
+                                <div class="minus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                      </svg>
+                                      
+                                </div>
+                                <div class="quantity">
+                                    <p>1</p>
+                                </div>
+                                <div class="plus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                      </svg>
+                                      
+                                </div>
+                            </div>
+    
+                            <div class="basketBox">
+                                <div class="basketCircle">
+                                    <img src="imgs/basket.png" alt="">
+                                </div>
+                                <div class="hart">
+                                    <img class="img1 show" src="imgs/hartIcon.png">
+                                    <img class="img2" src="imgs/hartIconClick.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="close">
+                
+                <div class="close01"></div>
+                <div class="close02"></div>
+            </div>
+        </div>
+
+
+        <div class="menu">
+            <div class="menubackground">
+                
+                <div class="iconContiner">
+                    <div class="icon01"><a href="http://127.0.0.1:5500/livingroom.html"><img src="imgs/livingIcon.png" alt=""></a></div>
+                    <div class="icon02"><a href="http://127.0.0.1:5500/bedroom.html"><img src="imgs/bedIcon.png" alt=""></a></div>
+                    <!-- 최대한 균일한 공간을 위해 임의로 03아이콘 넣음 -->
+                    <div class="icon03"><a href="#"><img src="imgs/bedroom/livingIcon.png" alt=""></a></div>
+                    <div class="icon04"><a href="http://127.0.0.1:5500/bathroom.html"><img src="imgs/bathIcon.png" alt=""></a></div>
+                    <div class="icon05"><a href="http://127.0.0.1:5500/kitchen.html"><img src="imgs/kitchenIcon.png" alt=""></a></div>
+                </div>
+                <div class="gotoMain"><a href="http://127.0.0.1:5500/IKEAfront.html"><img src="imgs/menuIKEA.png" alt=""></a></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/bedroom.js"></script>
+   
+</body>
+</html>
