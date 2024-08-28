@@ -146,12 +146,12 @@ $(document).ready(function() {
     // 각 팝업의 첫 번째 색상을 선택하고 이미지를 업데이트
     function initializePopup(popupContainer) {
         let firstColor = popupContainer.find('.circleColor').first();
-        // console.log(popupContainer);
+        
 
         if (firstColor.length) {
             let color = firstColor.data('color');
             let containerClass = popupContainer.attr('class').split(' ')[0].replace('PopupContainer', '').toLowerCase();
-            // console.log(containerClass + '<<<<containerClass');
+            
             switch (containerClass) {
                 case 'trash':
                     popupContainer.find('.productTrash img').attr('src', '../imgs/bathroom/trashPopup' + color + '.png');

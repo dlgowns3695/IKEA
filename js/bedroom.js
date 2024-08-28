@@ -78,7 +78,7 @@ $(document).ready(function() {
     /****** 아이콘 관련 ******/
     let currentUrl = window.location.href;
     // 페이지 이름이 "bedroom"인지 확인
-    if (currentUrl.includes("http://127.0.0.1:5500/bedroom.html")) {
+    if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bedroom.html")) {
         // icon02 이미지 src 변경
         $('.icon02 img').attr('src', 'imgs/bedIconClick.png');
     }
@@ -87,7 +87,7 @@ $(document).ready(function() {
 
     $(iconContiner).on('mouseenter', function() {
         // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("http://127.0.0.1:5500/bedroom.html") && $(this).hasClass('icon02')) return;
+        if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bedroom.html") && $(this).hasClass('icon02')) return;
 
         if ($(this).hasClass('icon01')) {
             $(this).find('img').attr('src', 'imgs/livingIconClick.png');
@@ -102,7 +102,7 @@ $(document).ready(function() {
 
     $(iconContiner).on('mouseleave', function() {
         // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("http://127.0.0.1:5500/bedroom.html") && $(this).hasClass('icon02')) return;
+        if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bedroom.html") && $(this).hasClass('icon02')) return;
 
         if ($(this).hasClass('icon01')) {
             $(this).find('img').attr('src', 'imgs/livingIcon.png');
