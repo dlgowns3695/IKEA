@@ -47,7 +47,7 @@ transition: opacity 1s, margin-left 1s;
 }
 
 .leftBuilding{
-    background: url('/imgs/leftstrokeBg.png') no-repeat;
+    background: url('imgs/leftstrokeBg.png') no-repeat;
     width: 792px;
     height: 530px;
     position:absolute;
@@ -56,7 +56,7 @@ transition: opacity 1s, margin-left 1s;
     }
       
 .rightBuilding{
-    background: url('/imgs/rightstrokeBg2.png')no-repeat;
+    background: url('imgs/rightstrokeBg2.png')no-repeat;
     width: 792px;
     height: 530px;
     position:absolute;
@@ -66,7 +66,7 @@ transition: opacity 1s, margin-left 1s;
 .backgroundBuilding{
     width: 1039px;
     height: 546px;
-    background: url('/imgs/IKEACENTERbuilding.png') no-repeat;
+    background: url('imgs/IKEACENTERbuilding.png') no-repeat;
     position:absolute;
     left:50%;
     transform: translateX(-50%);
@@ -79,7 +79,7 @@ transition: opacity 1s, margin-left 1s;
 
 
 .c-transition::before {
-    background-image: url("/imgs/ink-photo-frame.png");
+    background-image: url("imgs/ink-photo-frame.png");
     background-size: 100% 100%;
     background-position: 50% 50%;
     content: "";
@@ -88,7 +88,7 @@ transition: opacity 1s, margin-left 1s;
     width: 100%;
 }
 .c-transition::after {
-    background-image: url('/imgs/ink-transition-sprite.png');
+    background-image: url('imgs/ink-transition-sprite.png');
     background-size: 100% 100%;
     content: "";
     height: 100%;
@@ -319,10 +319,10 @@ transition: opacity 1s, margin-left 1s;
 .centerHuman{opacity: 0; transition: opacity 1.2s; position: absolute; bottom: -67px;left: 167px; z-index: 111;}
 .rightHuman{opacity: 0; transition: opacity 1.2s; position: absolute; bottom: -48px;left: 829px; z-index: 111;}
 
-.leftStreetLight{opacity: 0; transition: opacity 1s; width: 35px; height: 226px; position: absolute; bottom: -92px;left: -357px; background: url('/imgs/leftstreetlight.png') no-repeat;}
-.leftCenterStreetLight{opacity: 0; transition: opacity 1s; width: 38px; height: 198px; position: absolute; bottom: -25px;left: 106px;background: url('/imgs/leftcenterstreetlight.png') no-repeat;}
-.rightCenterStreetLight{opacity: 0; transition: opacity 1s; width: 38px; height: 198px; position: absolute; bottom: -26px;right: -44px; background: url('/imgs/rightcenterstreetlight.png') no-repeat;}
-.rightStreetLight{opacity: 0; transition: opacity 1s; width: 37px; height: 244px; position: absolute; bottom: -114px;right: -143px; background: url('/imgs/rightstreetlight.png') no-repeat;}
+.leftStreetLight{opacity: 0; transition: opacity 1s; width: 35px; height: 226px; position: absolute; bottom: -92px;left: -357px; background: url('imgs/leftstreetlight.png') no-repeat;}
+.leftCenterStreetLight{opacity: 0; transition: opacity 1s; width: 38px; height: 198px; position: absolute; bottom: -25px;left: 106px;background: url('imgs/leftcenterstreetlight.png') no-repeat;}
+.rightCenterStreetLight{opacity: 0; transition: opacity 1s; width: 38px; height: 198px; position: absolute; bottom: -26px;right: -44px; background: url('imgs/rightcenterstreetlight.png') no-repeat;}
+.rightStreetLight{opacity: 0; transition: opacity 1s; width: 37px; height: 244px; position: absolute; bottom: -114px;right: -143px; background: url('imgs/rightstreetlight.png') no-repeat;}
 
 .bottomProps {
   opacity: 0; transition: opacity 1s;
@@ -331,7 +331,7 @@ transition: opacity 1s, margin-left 1s;
   bottom: -115px;
   width: 2027px;
   height: 187px;
-  background: url(/imgs/bottomProps.png) no-repeat;
+  background: url(imgs/bottomProps.png) no-repeat;
 }
 
 
