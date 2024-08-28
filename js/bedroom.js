@@ -90,13 +90,13 @@ $(document).ready(function() {
         if (currentUrl.includes("bedroom") && $(this).hasClass('icon02')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIconClick.png');
+            $(this).find('img').attr('src', 'imgs/livingIconClick.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bedIconClick.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bathIconClick.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenClick.png');
+            $(this).find('img').attr('src', 'imgs/kitchenClick.png');
         }
     });
 
@@ -105,13 +105,13 @@ $(document).ready(function() {
         if (currentUrl.includes("bedroom") && $(this).hasClass('icon02')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIcon.png');
+            $(this).find('img').attr('src', 'imgs/livingIcon.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIcon.png');
+            $(this).find('img').attr('src', 'imgs/bedIcon.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIcon.png');
+            $(this).find('img').attr('src', 'imgs/bathIcon.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenIcon.png');
+            $(this).find('img').attr('src', 'imgs/kitchenIcon.png');
         }
     });
 
