@@ -154,17 +154,17 @@ $(document).ready(function() {
             console.log(containerClass + '<<<<containerClass');
             switch (containerClass) {
                 case 'bed':
-                    popupContainer.find('.productBed img').attr('src', '../imgs/bedroom/bedPopup' + color + '.png');
+                    popupContainer.find('.productBed img').attr('src', 'imgs/bedroom/bedPopup' + color + '.png');
                     console.log('스위치문 베드팝업')
                     break;
                 case 'pillow':
-                    popupContainer.find('.productPillow img').attr('src', '../imgs/bedroom/pillowPopup' + color + '.png');
+                    popupContainer.find('.productPillow img').attr('src', 'imgs/bedroom/pillowPopup' + color + '.png');
                     break;
                 case 'chair':
-                    popupContainer.find('.productChair img').attr('src', '../imgs/bedroom/chairPopup' + color + '.png');
+                    popupContainer.find('.productChair img').attr('src', 'imgs/bedroom/chairPopup' + color + '.png');
                     break;
                 case 'table':
-                    popupContainer.find('.productTable img').attr('src', '../imgs/bedroom/tablePopup' + color + '.png');
+                    popupContainer.find('.productTable img').attr('src', 'imgs/bedroom/tablePopup' + color + '.png');
                     break;
                 default:
                     // console.log('알 수 없는 컨테이너입니다.');
@@ -198,22 +198,22 @@ $(document).ready(function() {
         switch (containerClass) {
             case 'bedPopupContainer':
                 console.log('bedPopupContainer진입')
-                popupContainer.find('.productBed img').attr('src', '../imgs/bedroom/bedPopup' + color + '.png');
+                popupContainer.find('.productBed img').attr('src', 'imgs/bedroom/bedPopup' + color + '.png');
                 console.log('bedPopupContainer 의 이미지가 바뀌었습니다.')
                 break;
             case 'pillowPopupContainer':
                 console.log('pillowPopupContainer진입')
-                popupContainer.find('.productPillow img').attr('src', '../imgs/bedroom/pillowPopup' + color + '.png');
+                popupContainer.find('.productPillow img').attr('src', 'imgs/bedroom/pillowPopup' + color + '.png');
                 console.log('pillowPopupContainer 의 이미지가 바뀌었습니다.')
                 break;
             case 'chairPopupContainer':
                 console.log('chairPopupContainer진입')
-                popupContainer.find('.productChair img').attr('src', '../imgs/bedroom/chairPopup' + color + '.png');
+                popupContainer.find('.productChair img').attr('src', 'imgs/bedroom/chairPopup' + color + '.png');
                 console.log('chairPopupContainer 의 이미지가 바뀌었습니다.')
                 break;
             case 'tablePopupContainer':
                 console.log('tablePopupContainer진입')
-                popupContainer.find('.productTable img').attr('src', '../imgs/bedroom/tablePopup' + color + '.png');
+                popupContainer.find('.productTable img').attr('src', 'imgs/bedroom/tablePopup' + color + '.png');
                 console.log('tablePopupContainer 의 이미지가 바뀌었습니다.')
                 break;
             default:

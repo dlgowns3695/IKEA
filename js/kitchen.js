@@ -166,25 +166,25 @@ $(document).ready(function() {
             console.log(containerClass + '<<<<containerClass');
             switch (containerClass) {
                 case 'drawer01':
-                    popupContainer.find('.productDrawer01 img').attr('src', '../imgs/kitchen/drawer01Popup' + color + '.png');
+                    popupContainer.find('.productDrawer01 img').attr('src', 'imgs/kitchen/drawer01Popup' + color + '.png');
                     break;
                 case 'drawer02':
-                    popupContainer.find('.productDrawer02 img').attr('src', '../imgs/kitchen/drawer02Popup' + color + '.png');
+                    popupContainer.find('.productDrawer02 img').attr('src', 'imgs/kitchen/drawer02Popup' + color + '.png');
                     break;
                 case 'lighting':
-                    popupContainer.find('.productLighting img').attr('src', '../imgs/kitchen/lightingPopup' + color + '.png');
+                    popupContainer.find('.productLighting img').attr('src', 'imgs/kitchen/lightingPopup' + color + '.png');
                     break;
                 case 'blender':
-                    popupContainer.find('.productBlender img').attr('src', '../imgs/kitchen/blender01Popup' + color + '.png');
+                    popupContainer.find('.productBlender img').attr('src', 'imgs/kitchen/blender01Popup' + color + '.png');
                     break;
                 case 'toaster':
-                    popupContainer.find('.productToaster img').attr('src', '../imgs/kitchen/toasterPopup' + color + '.png');
+                    popupContainer.find('.productToaster img').attr('src', 'imgs/kitchen/toasterPopup' + color + '.png');
                     break;
                 case 'chair':
-                    popupContainer.find('.productChair img').attr('src', '../imgs/kitchen/chairPopup' + color + '.png');
+                    popupContainer.find('.productChair img').attr('src', 'imgs/kitchen/chairPopup' + color + '.png');
                     break;
                 case 'refrigerator':
-                    popupContainer.find('.productRefrigerator img').attr('src', '../imgs/kitchen/refrigeratorPopup' + color + '.png');
+                    popupContainer.find('.productRefrigerator img').attr('src', 'imgs/kitchen/refrigeratorPopup' + color + '.png');
                     break;
                 default:
                     // console.log('알 수 없는 컨테이너입니다.');
@@ -217,25 +217,25 @@ $(document).ready(function() {
         // 각 제품에 대해 스위치 문으로 이미지 업데이트
         switch (containerClass) {
             case 'drawer01PopupContainer':
-                popupContainer.find('.productDrawer01 img').attr('src', '../imgs/kitchen/drawer01Popup' + color + '.png');
+                popupContainer.find('.productDrawer01 img').attr('src', 'imgs/kitchen/drawer01Popup' + color + '.png');
                 break;
             case 'drawer02PopupContainer':
-                popupContainer.find('.productDrawer02 img').attr('src', '../imgs/kitchen/drawer02Popup' + color + '.png');
+                popupContainer.find('.productDrawer02 img').attr('src', 'imgs/kitchen/drawer02Popup' + color + '.png');
                 break;
             case 'lightingPopupContainer':
-                popupContainer.find('.productLighting img').attr('src', '../imgs/kitchen/lightingPopup' + color + '.png');
+                popupContainer.find('.productLighting img').attr('src', 'imgs/kitchen/lightingPopup' + color + '.png');
                 break;
             case 'blenderPopupContainer':
-                popupContainer.find('.productBlender img').attr('src', '../imgs/kitchen/blender01Popup' + color + '.png');
+                popupContainer.find('.productBlender img').attr('src', 'imgs/kitchen/blender01Popup' + color + '.png');
                 break;
             case 'toasterPopupContainer':
-                popupContainer.find('.productToaster img').attr('src', '../imgs/kitchen/toasterPopup' + color + '.png');
+                popupContainer.find('.productToaster img').attr('src', 'imgs/kitchen/toasterPopup' + color + '.png');
                 break;
             case 'chairPopupContainer':
-                popupContainer.find('.productChair img').attr('src', '../imgs/kitchen/chairPopup' + color + '.png');
+                popupContainer.find('.productChair img').attr('src', 'imgs/kitchen/chairPopup' + color + '.png');
                 break;
             case 'refrigeratorPopupContainer':
-                popupContainer.find('.productRefrigerator img').attr('src', '../imgs/kitchen/refrigeratorPopup' + color + '.png');
+                popupContainer.find('.productRefrigerator img').attr('src', 'imgs/kitchen/refrigeratorPopup' + color + '.png');
                 break;
             default:
                 console.log('알 수 없는 컨테이너입니다.');

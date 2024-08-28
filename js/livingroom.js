@@ -137,17 +137,17 @@ $(document).ready(function() {
             console.log(containerClass + '<<<<containerClass');
             switch (containerClass) {
                 case 'lighting':
-                    popupContainer.find('.productLighting img').attr('src', '../imgs/livingroom/lightingPopup.png' + color + '.png');
+                    popupContainer.find('.productLighting img').attr('src', 'imgs/livingroom/lightingPopup.png' + color + '.png');
                     console.log('스위치문 베드팝업')
                     break;
                 case 'sofa':
-                    popupContainer.find('.productSofa img').attr('src', '../imgs/livingroom/sofaPopup' + color + '.png');
+                    popupContainer.find('.productSofa img').attr('src', 'imgs/livingroom/sofaPopup' + color + '.png');
                     break;
                 case 'chair':
-                    popupContainer.find('.productChair img').attr('src', '../imgs/livingroom/chairPopup' + color + '.png');
+                    popupContainer.find('.productChair img').attr('src', 'imgs/livingroom/chairPopup' + color + '.png');
                     break;
                 case 'curtain':
-                    popupContainer.find('.productCurtain img').attr('src', '../imgs/livingroom/curtainPopup' + color + '.png');
+                    popupContainer.find('.productCurtain img').attr('src', 'imgs/livingroom/curtainPopup' + color + '.png');
                     break;
                 default:
                     // console.log('알 수 없는 컨테이너입니다.');
@@ -181,15 +181,15 @@ $(document).ready(function() {
         switch (containerClass) {
             case 'lightingPopupContainer':
                 console.log('bedPopupContainer진입')
-                popupContainer.find('.productLighting img').attr('src', '../imgs/livingroom/lightingPopup.png' + color + '.png');
+                popupContainer.find('.productLighting img').attr('src', 'imgs/livingroom/lightingPopup.png' + color + '.png');
                 break;
             case 'sofaPopupContainer':
-                popupContainer.find('.productSofa img').attr('src', '../imgs/livingroom/sofaPopup' + color + '.png');
+                popupContainer.find('.productSofa img').attr('src', 'imgs/livingroom/sofaPopup' + color + '.png');
             case 'chairPopupContainer':
-                popupContainer.find('.productChair img').attr('src', '../imgs/livingroom/ChairPopup' + color + '.png');
+                popupContainer.find('.productChair img').attr('src', 'imgs/livingroom/ChairPopup' + color + '.png');
                 break;
             case 'curtainPopupContainer':
-                popupContainer.find('.productCurtain img').attr('src', '../imgs/livingroom/curtainPopup' + color + '.png');
+                popupContainer.find('.productCurtain img').attr('src', 'imgs/livingroom/curtainPopup' + color + '.png');
                 break;
             default:
                 console.log('알 수 없는 컨테이너입니다.');
@@ -286,7 +286,7 @@ function product(containerClass, dimClass, quantityClass, priceClass, pricePerIt
         $('.mainCircle').children().removeClass('clicked');
 
         // 전등 불 다시 끄기
-        $('.light img').attr('src', '../imgs/livingroom/lighting02.png')
+        $('.light img').attr('src', 'imgs/livingroom/lighting02.png')
         // 팝업과 딤을 닫기
         $('.dim, .PopupContainer').css('display', 'none');
 
