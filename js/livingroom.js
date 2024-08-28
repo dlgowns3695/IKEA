@@ -218,8 +218,8 @@ let prices = {
         // 어떤건지 판단해서 팝업열기, 딤 열기, 그에 맞는 수량, 금액, 상품의 가격
         if (parent.hasClass('lightingBox')) {
             product('lightingPopupContainer', 'lightingDim', 'lightingPopupContainer .quantity p', 'lightingPopupContainer .price', prices.lighting);
-            $('.light img').attr('src', '../imgs/livingroom/lighting02Click.png')
-            // $('.light img').attr('src', '../imgs/livingroom/lighting02Click02.png');
+            $('.light img').attr('src', 'imgs/livingroom/lighting02Click.png')
+            // $('.light img').attr('src', 'imgs/livingroom/lighting02Click02.png');
             console.log('여기엔 전등이 켜지는 이미지 입니다.')
         }
 
