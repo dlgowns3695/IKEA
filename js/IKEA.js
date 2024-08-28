@@ -131,20 +131,36 @@ const mainCircle = $('.mainCircle');
         $(this).children().eq(2).css('backgroundColor', '#fff');
     });
 
+// mainCircle.on('click', function() {
+//     if ($(this).children().eq(2).hasClass('livingcircle')) { 
+//         window.location.href = "http://127.0.0.1:5500/livingroom.html";
+//     }
+//     else if ($(this).children().eq(2).hasClass('bedcircle')) {
+//         window.location.href = "http://127.0.0.1:5500/bedroom.html";
+//     }
+//     else if ($(this).children().eq(2).hasClass('kitchencircle')) {
+//         window.location.href = "http://127.0.0.1:5500/kitchen.html";
+//     }
+//     else if ($(this).children().eq(2).hasClass('bathcircle')) {
+//         window.location.href = "http://127.0.0.1:5500/bathroom.html";
+//     }
+// });
+
 mainCircle.on('click', function() {
     if ($(this).children().eq(2).hasClass('livingcircle')) { 
-        window.location.href = "http://127.0.0.1:5500/livingroom.html";
+        window.location.href = "livingroom.html";
     }
     else if ($(this).children().eq(2).hasClass('bedcircle')) {
-        window.location.href = "http://127.0.0.1:5500/bedroom.html";
+        window.location.href = "bedroom.html";
     }
     else if ($(this).children().eq(2).hasClass('kitchencircle')) {
-        window.location.href = "http://127.0.0.1:5500/kitchen.html";
+        window.location.href = "kitchen.html";
     }
     else if ($(this).children().eq(2).hasClass('bathcircle')) {
-        window.location.href = "http://127.0.0.1:5500/bathroom.html";
+        window.location.href = "bathroom.html";
     }
 });
+
 
 
 
