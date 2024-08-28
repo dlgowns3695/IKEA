@@ -65,6 +65,8 @@ $(document).ready(function() {
     
     /****** 아이콘 관련 ******/
     let currentUrl = window.location.href;
+    console.log(currentUrl + ' < cu')
+    console.log(window.location.href)
 
     if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bathroom.html")) {
         console.log('진입');
@@ -144,12 +146,12 @@ $(document).ready(function() {
     // 각 팝업의 첫 번째 색상을 선택하고 이미지를 업데이트
     function initializePopup(popupContainer) {
         let firstColor = popupContainer.find('.circleColor').first();
-        console.log(popupContainer);
+        // console.log(popupContainer);
 
         if (firstColor.length) {
             let color = firstColor.data('color');
             let containerClass = popupContainer.attr('class').split(' ')[0].replace('PopupContainer', '').toLowerCase();
-            console.log(containerClass + '<<<<containerClass');
+            // console.log(containerClass + '<<<<containerClass');
             switch (containerClass) {
                 case 'trash':
                     popupContainer.find('.productTrash img').attr('src', '../imgs/bathroom/trashPopup' + color + '.png');

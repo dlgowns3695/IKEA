@@ -78,40 +78,40 @@ $(document).ready(function() {
     /****** 아이콘 관련 ******/
     let currentUrl = window.location.href;
     // 페이지 이름이 "bedroom"인지 확인
-    if (currentUrl.includes("bedroom")) {
+    if (currentUrl.includes("http://127.0.0.1:5500/bedroom.html")) {
         // icon02 이미지 src 변경
-        $('.icon02 img').attr('src', '../imgs/bedIconClick.png');
+        $('.icon02 img').attr('src', 'imgs/bedIconClick.png');
     }
 
     let iconContiner = $('.iconContiner div');
 
     $(iconContiner).on('mouseenter', function() {
         // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("bedroom") && $(this).hasClass('icon02')) return;
+        if (currentUrl.includes("http://127.0.0.1:5500/bedroom.html") && $(this).hasClass('icon02')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIconClick.png');
+            $(this).find('img').attr('src', 'imgs/livingIconClick.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bedIconClick.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bathIconClick.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenClick.png');
+            $(this).find('img').attr('src', 'imgs/kitchenClick.png');
         }
     });
 
     $(iconContiner).on('mouseleave', function() {
         // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("bedroom") && $(this).hasClass('icon02')) return;
+        if (currentUrl.includes("http://127.0.0.1:5500/bedroom.html") && $(this).hasClass('icon02')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIcon.png');
+            $(this).find('img').attr('src', 'imgs/livingIcon.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIcon.png');
+            $(this).find('img').attr('src', 'imgs/bedIcon.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIcon.png');
+            $(this).find('img').attr('src', 'imgs/bathIcon.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenIcon.png');
+            $(this).find('img').attr('src', 'imgs/kitchenIcon.png');
         }
     });
 
