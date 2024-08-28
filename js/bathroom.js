@@ -90,7 +90,7 @@ $(document).ready(function() {
 
     $(iconContiner).on('mouseleave', function() {
         // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("bathroom") && $(this).hasClass('icon04')) return;
+        if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bathroom.html") && $(this).hasClass('icon04')) return;
 
         if ($(this).hasClass('icon01')) {
             $(this).find('img').attr('src', '../imgs/livingIcon.png');
