@@ -148,16 +148,16 @@ const mainCircle = $('.mainCircle');
 
 mainCircle.on('click', function() {
     if ($(this).children().eq(2).hasClass('livingcircle')) { 
-        window.location.href = "livingroom.html";
+        window.location.href = "https://dlgowns3695.github.io/IKEA/livingroom.html";
     }
     else if ($(this).children().eq(2).hasClass('bedcircle')) {
-        window.location.href = "bedroom.html";
+        window.location.href = "https://dlgowns3695.github.io/IKEA/bedroom.html";
     }
     else if ($(this).children().eq(2).hasClass('kitchencircle')) {
-        window.location.href = "kitchen.html";
+        window.location.href = "https://dlgowns3695.github.io/IKEA/kitchen.html";
     }
     else if ($(this).children().eq(2).hasClass('bathcircle')) {
-        window.location.href = "bathroom.html";
+        window.location.href = "https://dlgowns3695.github.io/IKEA/bathroom.html";
     }
 });
 
