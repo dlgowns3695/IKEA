@@ -332,7 +332,7 @@ function product(containerClass, dimClass, quantityClass, priceClass, pricePerIt
 
     $('.gotoMain').on('click', function() {
         // 링크로 이동
-        window.location.href = 'http://127.0.0.1:5500/index.html';
+        window.location.href = 'https://dlgowns3695.github.io/IKEA/';
     });
 
     /****** 장바구니 옆 하트 관련 ******/
