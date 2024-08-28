@@ -68,7 +68,7 @@ $(document).ready(function() {
 
     if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bathroom.html")) {
         console.log('진입');
-        $('.icon04 img').attr('src', '../imgs/bathIconClick.png');
+        $('.icon04 img').attr('src', 'imgs/bathIconClick.png');
     }
 
     let iconContiner = $('.iconContiner div');
@@ -78,13 +78,13 @@ $(document).ready(function() {
         if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bathroom.html") && $(this).hasClass('icon04')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIconClick.png');
+            $(this).find('img').attr('src', 'imgs/livingIconClick.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bedIconClick.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bathIconClick.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenClick.png');
+            $(this).find('img').attr('src', 'imgs/kitchenClick.png');
         }
     });
 
@@ -93,13 +93,13 @@ $(document).ready(function() {
         if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bathroom.html") && $(this).hasClass('icon04')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIcon.png');
+            $(this).find('img').attr('src', 'imgs/livingIcon.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIcon.png');
+            $(this).find('img').attr('src', 'imgs/bedIcon.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIcon.png');
+            $(this).find('img').attr('src', 'imgs/bathIcon.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenIcon.png');
+            $(this).find('img').attr('src', 'imgs/kitchenIcon.png');
         }
     });
 
@@ -118,7 +118,7 @@ $(document).ready(function() {
         $(this).children().eq(1).addClass(hoverColorClass);
         $(this).children().eq(2).addClass(hoverColorClass);
         console.log(this)
-        $(this).parent().find('.lighting img').attr('src','../imgs/bathroom/wallLightingClick.png');
+        $(this).parent().find('.lighting img').attr('src','imgs/bathroom/wallLightingClick.png');
 
         // $('.lighting img').attr('src','../imgs/bathroom/wallLightingClick.png')
 
@@ -133,7 +133,7 @@ $(document).ready(function() {
             $(this).children().eq(2).removeClass(hoverColorClass);
             // 클릭이 된 상태는 계속 노란색임
 
-            $(this).parent().find('.lighting img').attr('src','../imgs/bathroom/wallLighting.png');
+            $(this).parent().find('.lighting img').attr('src','imgs/bathroom/wallLighting.png');
             }
         });
     });
