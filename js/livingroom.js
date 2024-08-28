@@ -62,7 +62,7 @@ $(document).ready(function() {
     let currentUrl = window.location.href;
     // 페이지 이름이 "bedroom"인지 확인
     if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/livingroom.html")) {
-        // icon02 이미지 src 변경
+        console.log('진입')
         $('.icon01 img').attr('src', 'imgs/livingIconClick.png');
     }
 
