@@ -65,6 +65,7 @@ $(document).ready(function() {
     
     /****** 아이콘 관련 ******/
     let currentUrl = window.location.href;
+    console.log(currentUrl)
 
     if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bathroom.html")) {
         console.log('진입');

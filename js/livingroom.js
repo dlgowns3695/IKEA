@@ -186,7 +186,7 @@ $(document).ready(function() {
             case 'sofaPopupContainer':
                 popupContainer.find('.productSofa img').attr('src', '../imgs/livingroom/sofaPopup' + color + '.png');
             case 'chairPopupContainer':
-                popupContainer.find('.productChair img').attr('src', '../imgs/livingroom/ChairPopup' + color + '.png');
+                popupContainer.find('.productChair img').attr('src', '../imgs/livingroom/chairPopup' + color + '.png');
                 break;
             case 'curtainPopupContainer':
                 popupContainer.find('.productCurtain img').attr('src', '../imgs/livingroom/curtainPopup' + color + '.png');
