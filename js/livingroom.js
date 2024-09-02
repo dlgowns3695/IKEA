@@ -61,25 +61,25 @@ $(document).ready(function() {
     /****** 아이콘 관련 ******/
     let currentUrl = window.location.href;
     // 페이지 이름이 "bedroom"인지 확인
-    if (currentUrl.includes("livingroom")) {
-        // icon02 이미지 src 변경
-        $('.icon01 img').attr('src', '../imgs/livingIconClick.png');
+    if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/livingroom.html")) {
+        console.log('진입')
+        $('.icon01 img').attr('src', 'imgs/livingIconClick.png');
     }
 
     let iconContiner = $('.iconContiner div');
 
     $(iconContiner).on('mouseenter', function() {
         // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("livingroom") && $(this).hasClass('icon01')) return;
+        if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/livingroom.html") && $(this).hasClass('icon01')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIconClick.png');
+            $(this).find('img').attr('src', 'imgs/livingIconClick.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bedIconClick.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bathIconClick.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenClick.png');
+            $(this).find('img').attr('src', 'imgs/kitchenClick.png');
         }
     });
 
@@ -88,13 +88,13 @@ $(document).ready(function() {
         if (currentUrl.includes("livingroom") && $(this).hasClass('icon01')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIcon.png');
+            $(this).find('img').attr('src', 'imgs/livingIcon.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIcon.png');
+            $(this).find('img').attr('src', 'imgs/bedIcon.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIcon.png');
+            $(this).find('img').attr('src', 'imgs/bathIcon.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenIcon.png');
+            $(this).find('img').attr('src', 'imgs/kitchenIcon.png');
         }
     });
 
@@ -137,17 +137,17 @@ $(document).ready(function() {
             console.log(containerClass + '<<<<containerClass');
             switch (containerClass) {
                 case 'lighting':
-                    popupContainer.find('.productLighting img').attr('src', '../imgs/livingroom/lightingPopup.png' + color + '.png');
+                    popupContainer.find('.productLighting img').attr('src', 'imgs/livingroom/lightingPopup.png' + color + '.png');
                     console.log('스위치문 베드팝업')
                     break;
                 case 'sofa':
-                    popupContainer.find('.productSofa img').attr('src', '../imgs/livingroom/sofaPopup' + color + '.png');
+                    popupContainer.find('.productSofa img').attr('src', 'imgs/livingroom/sofaPopup' + color + '.png');
                     break;
                 case 'chair':
-                    popupContainer.find('.productChair img').attr('src', '../imgs/livingroom/chairPopup' + color + '.png');
+                    popupContainer.find('.productChair img').attr('src', 'imgs/livingroom/chairPopup' + color + '.png');
                     break;
                 case 'curtain':
-                    popupContainer.find('.productCurtain img').attr('src', '../imgs/livingroom/curtainPopup' + color + '.png');
+                    popupContainer.find('.productCurtain img').attr('src', 'imgs/livingroom/curtainPopup' + color + '.png');
                     break;
                 default:
                     // console.log('알 수 없는 컨테이너입니다.');
@@ -181,15 +181,19 @@ $(document).ready(function() {
         switch (containerClass) {
             case 'lightingPopupContainer':
                 console.log('bedPopupContainer진입')
-                popupContainer.find('.productLighting img').attr('src', '../imgs/livingroom/lightingPopup.png' + color + '.png');
+                popupContainer.find('.productLighting img').attr('src', 'imgs/livingroom/lightingPopup.png' + color + '.png');
                 break;
             case 'sofaPopupContainer':
-                popupContainer.find('.productSofa img').attr('src', '../imgs/livingroom/sofaPopup' + color + '.png');
+                popupContainer.find('.productSofa img').attr('src', 'imgs/livingroom/sofaPopup' + color + '.png');
             case 'chairPopupContainer':
+
                 popupContainer.find('.productChair img').attr('src', '../imgs/livingroom/chairPopup' + color + '.png');
+
+                popupContainer.find('.productChair img').attr('src', 'imgs/livingroom/chairPopup' + color + '.png');
+
                 break;
             case 'curtainPopupContainer':
-                popupContainer.find('.productCurtain img').attr('src', '../imgs/livingroom/curtainPopup' + color + '.png');
+                popupContainer.find('.productCurtain img').attr('src', 'imgs/livingroom/curtainPopup' + color + '.png');
                 break;
             default:
                 console.log('알 수 없는 컨테이너입니다.');
@@ -218,8 +222,8 @@ let prices = {
         // 어떤건지 판단해서 팝업열기, 딤 열기, 그에 맞는 수량, 금액, 상품의 가격
         if (parent.hasClass('lightingBox')) {
             product('lightingPopupContainer', 'lightingDim', 'lightingPopupContainer .quantity p', 'lightingPopupContainer .price', prices.lighting);
-            $('.light img').attr('src', '../imgs/livingroom/lighting02Click.png')
-            // $('.light img').attr('src', '../imgs/livingroom/lighting02Click02.png');
+            $('.light img').attr('src', 'imgs/livingroom/lighting02Click.png')
+            // $('.light img').attr('src', 'imgs/livingroom/lighting02Click02.png');
             console.log('여기엔 전등이 켜지는 이미지 입니다.')
         }
 
@@ -286,7 +290,7 @@ function product(containerClass, dimClass, quantityClass, priceClass, pricePerIt
         $('.mainCircle').children().removeClass('clicked');
 
         // 전등 불 다시 끄기
-        $('.light img').attr('src', '../imgs/livingroom/lighting02.png')
+        $('.light img').attr('src', 'imgs/livingroom/lighting02.png')
         // 팝업과 딤을 닫기
         $('.dim, .PopupContainer').css('display', 'none');
 

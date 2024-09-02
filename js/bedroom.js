@@ -78,40 +78,40 @@ $(document).ready(function() {
     /****** 아이콘 관련 ******/
     let currentUrl = window.location.href;
     // 페이지 이름이 "bedroom"인지 확인
-    if (currentUrl.includes("bedroom")) {
+    if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bedroom.html")) {
         // icon02 이미지 src 변경
-        $('.icon02 img').attr('src', '../imgs/bedIconClick.png');
+        $('.icon02 img').attr('src', 'imgs/bedIconClick.png');
     }
 
     let iconContiner = $('.iconContiner div');
 
     $(iconContiner).on('mouseenter', function() {
         // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("bedroom") && $(this).hasClass('icon02')) return;
+        if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bedroom.html") && $(this).hasClass('icon02')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIconClick.png');
+            $(this).find('img').attr('src', 'imgs/livingIconClick.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bedIconClick.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bathIconClick.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenClick.png');
+            $(this).find('img').attr('src', 'imgs/kitchenClick.png');
         }
     });
 
     $(iconContiner).on('mouseleave', function() {
         // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("bedroom") && $(this).hasClass('icon02')) return;
+        if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bedroom.html") && $(this).hasClass('icon02')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIcon.png');
+            $(this).find('img').attr('src', 'imgs/livingIcon.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIcon.png');
+            $(this).find('img').attr('src', 'imgs/bedIcon.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIcon.png');
+            $(this).find('img').attr('src', 'imgs/bathIcon.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenIcon.png');
+            $(this).find('img').attr('src', 'imgs/kitchenIcon.png');
         }
     });
 
@@ -154,17 +154,17 @@ $(document).ready(function() {
             console.log(containerClass + '<<<<containerClass');
             switch (containerClass) {
                 case 'bed':
-                    popupContainer.find('.productBed img').attr('src', '../imgs/bedroom/bedPopup' + color + '.png');
+                    popupContainer.find('.productBed img').attr('src', 'imgs/bedroom/bedPopup' + color + '.png');
                     console.log('스위치문 베드팝업')
                     break;
                 case 'pillow':
-                    popupContainer.find('.productPillow img').attr('src', '../imgs/bedroom/pillowPopup' + color + '.png');
+                    popupContainer.find('.productPillow img').attr('src', 'imgs/bedroom/pillowPopup' + color + '.png');
                     break;
                 case 'chair':
-                    popupContainer.find('.productChair img').attr('src', '../imgs/bedroom/chairPopup' + color + '.png');
+                    popupContainer.find('.productChair img').attr('src', 'imgs/bedroom/chairPopup' + color + '.png');
                     break;
                 case 'table':
-                    popupContainer.find('.productTable img').attr('src', '../imgs/bedroom/tablePopup' + color + '.png');
+                    popupContainer.find('.productTable img').attr('src', 'imgs/bedroom/tablePopup' + color + '.png');
                     break;
                 default:
                     // console.log('알 수 없는 컨테이너입니다.');
@@ -198,22 +198,22 @@ $(document).ready(function() {
         switch (containerClass) {
             case 'bedPopupContainer':
                 console.log('bedPopupContainer진입')
-                popupContainer.find('.productBed img').attr('src', '../imgs/bedroom/bedPopup' + color + '.png');
+                popupContainer.find('.productBed img').attr('src', 'imgs/bedroom/bedPopup' + color + '.png');
                 console.log('bedPopupContainer 의 이미지가 바뀌었습니다.')
                 break;
             case 'pillowPopupContainer':
                 console.log('pillowPopupContainer진입')
-                popupContainer.find('.productPillow img').attr('src', '../imgs/bedroom/pillowPopup' + color + '.png');
+                popupContainer.find('.productPillow img').attr('src', 'imgs/bedroom/pillowPopup' + color + '.png');
                 console.log('pillowPopupContainer 의 이미지가 바뀌었습니다.')
                 break;
             case 'chairPopupContainer':
                 console.log('chairPopupContainer진입')
-                popupContainer.find('.productChair img').attr('src', '../imgs/bedroom/chairPopup' + color + '.png');
+                popupContainer.find('.productChair img').attr('src', 'imgs/bedroom/chairPopup' + color + '.png');
                 console.log('chairPopupContainer 의 이미지가 바뀌었습니다.')
                 break;
             case 'tablePopupContainer':
                 console.log('tablePopupContainer진입')
-                popupContainer.find('.productTable img').attr('src', '../imgs/bedroom/tablePopup' + color + '.png');
+                popupContainer.find('.productTable img').attr('src', 'imgs/bedroom/tablePopup' + color + '.png');
                 console.log('tablePopupContainer 의 이미지가 바뀌었습니다.')
                 break;
             default:

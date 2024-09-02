@@ -66,41 +66,41 @@ $(document).ready(function() {
     /****** 아이콘 관련 ******/
     let currentUrl = window.location.href;
     // 페이지 이름이 "bedroom"인지 확인
-    if (currentUrl.includes("kitchen")) {
+    if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/kitchen.html")) {
         console.log('진입');
-        // icon02 이미지 src 변경
-        $('.icon05 img').attr('src', '../imgs/kitchenClick.png');
+       
+        $('.icon05 img').attr('src', 'imgs/kitchenClick.png');
     }
 
     let iconContiner = $('.iconContiner div');
 
     $(iconContiner).on('mouseenter', function() {
-        // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("kitchen") && $(this).hasClass('icon05')) return;
+        
+        if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/kitchen.html") && $(this).hasClass('icon05')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIconClick.png');
+            $(this).find('img').attr('src', 'imgs/livingIconClick.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bedIconClick.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIconClick.png');
+            $(this).find('img').attr('src', 'imgs/bathIconClick.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenClick.png');
+            $(this).find('img').attr('src', 'imgs/kitchenClick.png');
         }
     });
 
     $(iconContiner).on('mouseleave', function() {
-        // "bedroom" 페이지에서는 icon02의 이미지를 유지하고, 다른 아이콘만 처리
-        if (currentUrl.includes("kitchen") && $(this).hasClass('icon05')) return;
+        
+        if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/kitchen.html") && $(this).hasClass('icon05')) return;
 
         if ($(this).hasClass('icon01')) {
-            $(this).find('img').attr('src', '../imgs/livingIcon.png');
+            $(this).find('img').attr('src', 'imgs/livingIcon.png');
         } else if ($(this).hasClass('icon02')) {
-            $(this).find('img').attr('src', '../imgs/bedIcon.png');
+            $(this).find('img').attr('src', 'imgs/bedIcon.png');
         } else if ($(this).hasClass('icon04')) {
-            $(this).find('img').attr('src', '../imgs/bathIcon.png');
+            $(this).find('img').attr('src', 'imgs/bathIcon.png');
         } else if ($(this).hasClass('icon05')) {
-            $(this).find('img').attr('src', '../imgs/kitchenIcon.png');
+            $(this).find('img').attr('src', 'imgs/kitchenIcon.png');
         }
     });
 
@@ -166,25 +166,25 @@ $(document).ready(function() {
             console.log(containerClass + '<<<<containerClass');
             switch (containerClass) {
                 case 'drawer01':
-                    popupContainer.find('.productDrawer01 img').attr('src', '../imgs/kitchen/drawer01Popup' + color + '.png');
+                    popupContainer.find('.productDrawer01 img').attr('src', 'imgs/kitchen/drawer01Popup' + color + '.png');
                     break;
                 case 'drawer02':
-                    popupContainer.find('.productDrawer02 img').attr('src', '../imgs/kitchen/drawer02Popup' + color + '.png');
+                    popupContainer.find('.productDrawer02 img').attr('src', 'imgs/kitchen/drawer02Popup' + color + '.png');
                     break;
                 case 'lighting':
-                    popupContainer.find('.productLighting img').attr('src', '../imgs/kitchen/lightingPopup' + color + '.png');
+                    popupContainer.find('.productLighting img').attr('src', 'imgs/kitchen/lightingPopup' + color + '.png');
                     break;
                 case 'blender':
-                    popupContainer.find('.productBlender img').attr('src', '../imgs/kitchen/blender01Popup' + color + '.png');
+                    popupContainer.find('.productBlender img').attr('src', 'imgs/kitchen/blender01Popup' + color + '.png');
                     break;
                 case 'toaster':
-                    popupContainer.find('.productToaster img').attr('src', '../imgs/kitchen/toasterPopup' + color + '.png');
+                    popupContainer.find('.productToaster img').attr('src', 'imgs/kitchen/toasterPopup' + color + '.png');
                     break;
                 case 'chair':
-                    popupContainer.find('.productChair img').attr('src', '../imgs/kitchen/chairPopup' + color + '.png');
+                    popupContainer.find('.productChair img').attr('src', 'imgs/kitchen/chairPopup' + color + '.png');
                     break;
                 case 'refrigerator':
-                    popupContainer.find('.productRefrigerator img').attr('src', '../imgs/kitchen/refrigeratorPopup' + color + '.png');
+                    popupContainer.find('.productRefrigerator img').attr('src', 'imgs/kitchen/refrigeratorPopup' + color + '.png');
                     break;
                 default:
                     // console.log('알 수 없는 컨테이너입니다.');
@@ -217,25 +217,25 @@ $(document).ready(function() {
         // 각 제품에 대해 스위치 문으로 이미지 업데이트
         switch (containerClass) {
             case 'drawer01PopupContainer':
-                popupContainer.find('.productDrawer01 img').attr('src', '../imgs/kitchen/drawer01Popup' + color + '.png');
+                popupContainer.find('.productDrawer01 img').attr('src', 'imgs/kitchen/drawer01Popup' + color + '.png');
                 break;
             case 'drawer02PopupContainer':
-                popupContainer.find('.productDrawer02 img').attr('src', '../imgs/kitchen/drawer02Popup' + color + '.png');
+                popupContainer.find('.productDrawer02 img').attr('src', 'imgs/kitchen/drawer02Popup' + color + '.png');
                 break;
             case 'lightingPopupContainer':
-                popupContainer.find('.productLighting img').attr('src', '../imgs/kitchen/lightingPopup' + color + '.png');
+                popupContainer.find('.productLighting img').attr('src', 'imgs/kitchen/lightingPopup' + color + '.png');
                 break;
             case 'blenderPopupContainer':
-                popupContainer.find('.productBlender img').attr('src', '../imgs/kitchen/blender01Popup' + color + '.png');
+                popupContainer.find('.productBlender img').attr('src', 'imgs/kitchen/blender01Popup' + color + '.png');
                 break;
             case 'toasterPopupContainer':
-                popupContainer.find('.productToaster img').attr('src', '../imgs/kitchen/toasterPopup' + color + '.png');
+                popupContainer.find('.productToaster img').attr('src', 'imgs/kitchen/toasterPopup' + color + '.png');
                 break;
             case 'chairPopupContainer':
-                popupContainer.find('.productChair img').attr('src', '../imgs/kitchen/chairPopup' + color + '.png');
+                popupContainer.find('.productChair img').attr('src', 'imgs/kitchen/chairPopup' + color + '.png');
                 break;
             case 'refrigeratorPopupContainer':
-                popupContainer.find('.productRefrigerator img').attr('src', '../imgs/kitchen/refrigeratorPopup' + color + '.png');
+                popupContainer.find('.productRefrigerator img').attr('src', 'imgs/kitchen/refrigeratorPopup' + color + '.png');
                 break;
             default:
                 console.log('알 수 없는 컨테이너입니다.');

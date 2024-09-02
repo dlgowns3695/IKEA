@@ -65,10 +65,9 @@ $(document).ready(function() {
     
     /****** 아이콘 관련 ******/
     let currentUrl = window.location.href;
-    console.log(currentUrl)
 
     if (currentUrl.includes("https://dlgowns3695.github.io/IKEA/bathroom.html")) {
-        console.log('진입');
+        // console.log('진입');
         $('.icon04 img').attr('src', 'imgs/bathIconClick.png');
     }
 
@@ -118,7 +117,7 @@ $(document).ready(function() {
         $(this).children().eq(0).addClass(hoverColorClass);
         $(this).children().eq(1).addClass(hoverColorClass);
         $(this).children().eq(2).addClass(hoverColorClass);
-        console.log(this)
+        // console.log(this)
         $(this).parent().find('.lighting img').attr('src','imgs/bathroom/wallLightingClick.png');
 
         // $('.lighting img').attr('src','../imgs/bathroom/wallLightingClick.png')
@@ -145,30 +144,30 @@ $(document).ready(function() {
     // 각 팝업의 첫 번째 색상을 선택하고 이미지를 업데이트
     function initializePopup(popupContainer) {
         let firstColor = popupContainer.find('.circleColor').first();
-        console.log(popupContainer);
+        
 
         if (firstColor.length) {
             let color = firstColor.data('color');
             let containerClass = popupContainer.attr('class').split(' ')[0].replace('PopupContainer', '').toLowerCase();
-            console.log(containerClass + '<<<<containerClass');
+            
             switch (containerClass) {
                 case 'trash':
-                    popupContainer.find('.productTrash img').attr('src', '../imgs/bathroom/trashPopup' + color + '.png');
+                    popupContainer.find('.productTrash img').attr('src', 'imgs/bathroom/trashPopup' + color + '.png');
                     break;
                 case 'towel':
-                    popupContainer.find('.productTowel img').attr('src', '../imgs/bathroom/towelPopup' + color + '.png');
+                    popupContainer.find('.productTowel img').attr('src', 'imgs/bathroom/towelPopup' + color + '.png');
                     break;
                 case 'bathroomShoes':
-                    popupContainer.find('.productBathroomShoes img').attr('src', '../imgs/bathroom/bathroomShoesPopup' + color + '.png');
+                    popupContainer.find('.productBathroomShoes img').attr('src', 'imgs/bathroom/bathroomShoesPopup' + color + '.png');
                     break;
                 case 'shampoo':
-                    popupContainer.find('.productShampoo img').attr('src', '../imgs/bathroom/shampooPopup' + color + '.png');
+                    popupContainer.find('.productShampoo img').attr('src', 'imgs/bathroom/shampooPopup' + color + '.png');
                     break;
                 case 'lighting':
-                    popupContainer.find('.productLighting img').attr('src', '../imgs/bathroom/lightingPopup' + color + '.png');
+                    popupContainer.find('.productLighting img').attr('src', 'imgs/bathroom/lightingPopup' + color + '.png');
                     break;
                 case 'table':
-                    popupContainer.find('.productTable img').attr('src', '../imgs/bathroom/tablePopup' + color + '.png');
+                    popupContainer.find('.productTable img').attr('src', 'imgs/bathroom/tablePopup' + color + '.png');
                     break;
                 default:
                     // console.log('알 수 없는 컨테이너입니다.');
@@ -201,22 +200,22 @@ $(document).ready(function() {
         // 각 제품에 대해 스위치 문으로 이미지 업데이트
         switch (containerClass) {
             case 'trashPopupContainer':
-                popupContainer.find('.productTrash img').attr('src', '../imgs/bathroom/trashPopup' + color + '.png');
+                popupContainer.find('.productTrash img').attr('src', 'imgs/bathroom/trashPopup' + color + '.png');
                 break;
             case 'towelPopupContainer':
-                popupContainer.find('.productTowel img').attr('src', '../imgs/bathroom/towelPopup' + color + '.png');
+                popupContainer.find('.productTowel img').attr('src', 'imgs/bathroom/towelPopup' + color + '.png');
                 break;
             case 'bathroomShoesPopupContainer':
-                popupContainer.find('.productBathroomShoes img').attr('src', '../imgs/bathroom/bathroomShoesPopup' + color + '.png');
+                popupContainer.find('.productBathroomShoes img').attr('src', 'imgs/bathroom/bathroomShoesPopup' + color + '.png');
                 break;
             case 'shampooPopupContainer':
-                popupContainer.find('.productShampoo img').attr('src', '../imgs/bathroom/shampooPopup' + color + '.png');
+                popupContainer.find('.productShampoo img').attr('src', 'imgs/bathroom/shampooPopup' + color + '.png');
                 break;
             case 'lightingPopupContainer':
-                popupContainer.find('.productLighting img').attr('src', '../imgs/bathroom/lightingPopup' + color + '.png');
+                popupContainer.find('.productLighting img').attr('src', 'imgs/bathroom/lightingPopup' + color + '.png');
                 break;
             case 'tablePopupContainer':
-                popupContainer.find('.productTable img').attr('src', '../imgs/bathroom/tablePopup' + color + '.png');
+                popupContainer.find('.productTable img').attr('src', 'imgs/bathroom/tablePopup' + color + '.png');
                 break;
             default:
                 console.log('알 수 없는 컨테이너입니다.');
@@ -323,7 +322,7 @@ function product(containerClass, dimClass, quantityClass, priceClass, pricePerIt
         // 팝업과 딤을 닫기
         $('.dim, .PopupContainer').css('display', 'none');
 
-        $('.lighting img').attr('src','../imgs/bathroom/wallLighting.png')
+        $('.lighting img').attr('src','imgs/bathroom/wallLighting.png')
 
         // 수량 및 금액 초기화
         $('.PopupContainer').each(function() {
@@ -337,7 +336,7 @@ function product(containerClass, dimClass, quantityClass, priceClass, pricePerIt
 
             // 첫 번째 색상 선택, 첫번째 이미지로 바뀜
             initializePopup($(this));
-            console.log('각 팝업 초기화')
+            // console.log('각 팝업 초기화')
         });
     });
 
